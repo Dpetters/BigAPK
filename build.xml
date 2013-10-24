@@ -1,19 +1,38 @@
 <project name="bigapk">
 
-  <property name="src" location="src"/>
-  <property name="build" location="build/"/>
+    <property name="src" location="src"/>
+    <property name="classes" location="classes/"/>
 
-  <target name="init">
-      <mkdir dir="${build}"/>
-  </target>
+    <target name="init">
+        <mkdir dir="${classes}"/>
+    </target>
 
-  <target name="compile" depends="init">
-    <javac srcdir="${src}" destdir="${build}">
-      <classpath>
-          <pathelement path="lib/soot.jar"/>
-          <pathelement path="lib/"/>
-    </classpath>
-    </javac>
-  </target>
-
+    <target name="compile" depends="init">
+        <javac srcdir="${src}" destdir="${classes}">
+            <classpath>
+                <pathelement path="lib/soot.jar"/>
+                <pathelement path="lib/"/>
+            </classpath>
+        </javac>
+        <jar destfile="bin/android-instrument.jar" basedir="${classes}" includes="**/*.class">
+            <manifest>
+                <attribute name="Main-Class" value="AndroidInstrument"/>
+                <attribute name="Boot-Class-Path" value="android-instrument.jar"/>
+            </manifest>
+        </jar>
+    </target>
+    <!--
+    <target name="run" depends="compile">
+        <java classname="AndroidInstrument">
+            <arg value="-android-jars"/>
+            <arg value="lib/android-15.jar"/>
+            <arg value="-process-dir"/>
+            <arg value="apps/apks/Instagram_1.1.8.apk"/>
+            <classpath>
+                <pathelement path="lib/soot.jar"/>
+                <pathelement path="lib/"/>
+                <pathelement path="build/"/>
+            </classpath>
+        </java>
+    </target>-->
 </project>
