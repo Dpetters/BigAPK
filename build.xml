@@ -27,7 +27,7 @@
             <arg value="android-platforms"/>
             <arg value="-allow-phantom-refs"/>
             <arg value="-process-dir"/>
-            <arg value="apps/apks/Archos_Video_Player_v7_5_19_apkgalaxy_com.apk?extra=uBmdAMAaKExkkp5KKHaAutxOICthuWJvxwTpH42kViKK_gzDZX76Ia8eUUR5akAxSxRkKFMvatqFzw17v0SiMGMBHenvJXa0WQ&dl=1"/>
+            <arg value="apps/apks/AlZakat.apk"/>
             <classpath>
                 <pathelement path="lib/soot.jar"/>
                 <pathelement path="lib/"/>
