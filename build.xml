@@ -21,18 +21,18 @@
             </manifest>
         </jar>
     </target>
-    <!--
     <target name="run" depends="compile">
         <java classname="AndroidInstrument">
             <arg value="-android-jars"/>
-            <arg value="lib/android-15.jar"/>
+            <arg value="android-platforms"/>
+            <arg value="-allow-phantom-refs"/>
             <arg value="-process-dir"/>
-            <arg value="apps/apks/Instagram_1.1.8.apk"/>
+            <arg value="apps/apks/Archos_Video_Player_v7_5_19_apkgalaxy_com.apk?extra=uBmdAMAaKExkkp5KKHaAutxOICthuWJvxwTpH42kViKK_gzDZX76Ia8eUUR5akAxSxRkKFMvatqFzw17v0SiMGMBHenvJXa0WQ&dl=1"/>
             <classpath>
                 <pathelement path="lib/soot.jar"/>
                 <pathelement path="lib/"/>
-                <pathelement path="build/"/>
+                <pathelement path="classes/"/>
             </classpath>
         </java>
-    </target>-->
+    </target>
 </project>
