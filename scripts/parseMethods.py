@@ -11,8 +11,6 @@ def main(**kwargs):
 	n = ""
 	s = l.split(':')
 	if len(s[-1].lstrip().split(' '))==1:
-		print l
-		print str(s[0])+": void <init>(" + str(s[-1].lstrip().split("(")[1])
 		o.write( str(s[0])+": void <init>(" + str(s[-1].lstrip().split("(")[1]))
 	else:
 		o.write(l)

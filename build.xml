@@ -11,15 +11,8 @@
         <javac srcdir="${src}" destdir="${classes}">
             <classpath>
                 <pathelement path="lib/soot.jar"/>
-                <pathelement path="lib/"/>
             </classpath>
         </javac>
-        <jar destfile="bin/android-instrument.jar" basedir="${classes}" includes="**/*.class">
-            <manifest>
-                <attribute name="Main-Class" value="AndroidInstrument"/>
-                <attribute name="Boot-Class-Path" value="android-instrument.jar"/>
-            </manifest>
-        </jar>
     </target>
     <target name="run" depends="compile">
         <java classname="AndroidInstrument">
@@ -30,7 +23,6 @@
             <arg value="apps/apks/AlZakat.apk"/>
             <classpath>
                 <pathelement path="lib/soot.jar"/>
-                <pathelement path="lib/"/>
                 <pathelement path="classes/"/>
             </classpath>
         </java>
