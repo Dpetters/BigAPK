@@ -3,7 +3,8 @@ import subprocess
 
 def main(**kawrgs):
     apk_path = kawrgs["apk"]
-    p = subprocess.Popen(["java", "-cp", "bin/AndroidInstrument.jar:lib/soot.jar", "AndroidInstrument", "-android-jars", "android-platforms", "-allow-phantom-refs", "-process-dir", apk_path], stdout=subprocess.PIPE)
+    p = subprocess.Popen(["java", "-cp", "bin/AndroidInstrument.jar:lib/soot.jar", "AndroidInstrument",
+        "-android-jars", "android-platforms", "-allow-phantom-refs", "-process-dir", apk_path], stdout=subprocess.PIPE)
     print p.stdout.read()
 
 if __name__=="__main__":

@@ -1,3 +1,4 @@
+import java.io.File;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -24,6 +25,24 @@ public class AndroidInstrument {
     
     public static void main(String[] args) {
         
+        String appName = "";
+        for(int i = 0; i < args.length; ++i) {
+            String arg = args[i];
+            // is this the arg with the app name?
+            if(arg.contains(".apk")) {
+                // get file name from path
+                appName = new File(arg).getName();
+                // get rid of the .apk
+                appName = appName.substring(0, appName.length()-4);
+            }
+        }
+        if(appName.equals("")){
+            System.out.println("Couldn't figure out app name, exiting.");
+            System.exit(1);
+        } else {
+            System.out.println(appName);
+        }
+
         //prefer Android APK files// -src-prec apk
         Options.v().set_src_prec(Options.src_prec_apk);
         
@@ -45,26 +64,6 @@ public class AndroidInstrument {
                         public void caseInvokeStmt(InvokeStmt stmt) {
                             InvokeExpr invokeExpr = stmt.getInvokeExpr();
                             if(invokeExpr.getMethod().getName().equals("onDraw")) {
-
-                                Local tmpRef = addTmpRef(b);
-                                Local tmpString = addTmpString(b);
-                                
-                                  // insert "tmpRef = java.lang.System.out;" 
-                                units.insertBefore(Jimple.v().newAssignStmt( 
-                                              tmpRef, Jimple.v().newStaticFieldRef( 
-                                              Scene.v().getField("<java.lang.System: java.io.PrintStream out>").makeRef())), u);
-
-                                // insert "tmpLong = 'HELLO';" 
-                                units.insertBefore(Jimple.v().newAssignStmt(tmpString, 
-                                              StringConstant.v("HELLO")), u);
-                                
-                                // insert "tmpRef.println(tmpString);" 
-                                SootMethod toCall = Scene.v().getSootClass("java.io.PrintStream").getMethod("void println(java.lang.String)");                    
-                                units.insertBefore(Jimple.v().newInvokeStmt(
-                                              Jimple.v().newVirtualInvokeExpr(tmpRef, toCall.makeRef(), tmpString)), u);
-                                
-                                //check that we did not mess up the Jimple
-                                b.validate();
                             }
                         }
                         
@@ -76,19 +75,5 @@ public class AndroidInstrument {
         }));
         
         soot.Main.main(args);
-    }
-
-    private static Local addTmpRef(Body body)
-    {
-        Local tmpRef = Jimple.v().newLocal("tmpRef", RefType.v("java.io.PrintStream"));
-        body.getLocals().add(tmpRef);
-        return tmpRef;
-    }
-    
-    private static Local addTmpString(Body body)
-    {
-        Local tmpString = Jimple.v().newLocal("tmpString", RefType.v("java.lang.String")); 
-        body.getLocals().add(tmpString);
-        return tmpString;
     }
 }
