@@ -13,6 +13,12 @@
                 <pathelement path="lib/soot.jar"/>
             </classpath>
         </javac>
+        <jar destfile="bin/AndroidInstrument.jar" basedir="${classes}" includes="**/*.class">
+            <manifest>
+                <attribute name="Main-Class" value="AndroidInstrument"/>
+                <attribute name="Boot-Class-Path" value="AndroidInstrument.jar"/>
+            </manifest>
+        </jar>
     </target>
     <target name="run" depends="compile">
         <java classname="AndroidInstrument">
