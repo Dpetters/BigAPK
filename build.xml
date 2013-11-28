@@ -11,6 +11,7 @@
         <javac srcdir="${src}" destdir="${classes}">
             <classpath>
                 <pathelement path="lib/soot.jar"/>
+                <pathelement path="lib/opencsv-2.3.jar"/>
             </classpath>
         </javac>
         <jar destfile="bin/AndroidInstrument.jar" basedir="${classes}" includes="**/*.class">
@@ -19,18 +20,5 @@
                 <attribute name="Boot-Class-Path" value="AndroidInstrument.jar"/>
             </manifest>
         </jar>
-    </target>
-    <target name="run" depends="compile">
-        <java classname="AndroidInstrument">
-            <arg value="-android-jars"/>
-            <arg value="android-platforms"/>
-            <arg value="-allow-phantom-refs"/>
-            <arg value="-process-dir"/>
-            <arg value="apps/apks/AlZakat.apk"/>
-            <classpath>
-                <pathelement path="lib/soot.jar"/>
-                <pathelement path="classes/"/>
-            </classpath>
-        </java>
     </target>
 </project>
