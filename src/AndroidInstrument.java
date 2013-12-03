@@ -34,42 +34,10 @@ import soot.Unit;
 public class AndroidInstrument {
 
     public static void main(String[] args) {
-        final String[] librariesToFilter = {"com.google.android.apps.analytics",
-            "android.support",
-            "com.mobisystems",
-            "google.common",
-            "google.gdata",
-            "org.apache",
-            "org.json.simple",
-            "com.dropbox",
-            "com.box.androidlib",
-            "com.sony.nfx",
-            "com.appattach.tracking",
-            "com.google.web.bindery",
-            "com.google.ads",
-            "com.pontiflex",
-            "com.google.gwt",
-            "org.json",
-            "net.lingala.zip4j",
-            "org.mortbay",
-            "org.jsoup",
-            "com.inmobi.androidsdk",
-            "com.Leadbolt.AdLog",
-            "com.adsdk",
-            "com.adfonic",
-            "com.google.gson",
-            "com.amazon.inapp",
-            "com.facebook.android",
-            "com.bugsense",
-            "com.commonsware.cwac",
-            "org.xbill.DNS",
-            "com.kenai.jbosh",
-            "org.codehaus.jackson"};
 
         String appPackageTmp = "";
         String appNameTmp = "";
         for(int i = 0; i < args.length; ++i) {
-            System.out.println(args[i]);
             String arg = args[i];
             // is this the arg with the app name?
             if(arg.contains(".apk")) {
