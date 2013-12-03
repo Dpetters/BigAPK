@@ -10,7 +10,6 @@ def main(**kawrgs):
         print "Processing " + app
         print p.stdout.read()
         p.communicate()
-        break
 
 if __name__=="__main__":
     parser = argparse.ArgumentParser()
