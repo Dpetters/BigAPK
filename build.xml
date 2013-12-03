@@ -12,6 +12,7 @@
             <classpath>
                 <pathelement path="lib/soot.jar"/>
                 <pathelement path="lib/opencsv-2.3.jar"/>
+                <pathelement path="lib/apk-parser-1.1.jar"/>
             </classpath>
         </javac>
         <jar destfile="bin/AndroidInstrument.jar" basedir="${classes}" includes="**/*.class">
