@@ -1,0 +1,1158 @@
+public class com.moplus.moplusapp.MoPlusActivity extends com.ihs.f.a implements android.view.View$OnClickListener, com.ihs.h.a.g
+{
+    boolean a;
+    private android.widget.Button b;
+    private android.widget.EditText c;
+    private android.widget.EditText d;
+    private android.widget.ProgressBar e;
+    private android.view.inputmethod.InputMethodManager f;
+    private android.widget.ImageView g;
+    private android.widget.ImageView h;
+    private boolean i;
+    private java.lang.String j;
+    private java.lang.String k;
+    private java.util.ArrayList l;
+    private android.os.Handler m;
+    private android.app.NotificationManager n;
+    private boolean o;
+    private com.moplus.moplusapp.e.h p;
+    private java.util.Map q;
+    private android.view.View r;
+    private android.view.View s;
+    private android.view.View t;
+    private android.view.View u;
+    private android.app.AlertDialog v;
+
+    public void <init>()
+    {
+        com.moplus.moplusapp.MoPlusActivity $r0;
+        com.moplus.moplusapp.MoPlusActivity$1 $r1;
+
+        $r0 := @this: com.moplus.moplusapp.MoPlusActivity;
+        specialinvoke $r0.<com.ihs.f.a: void <init>()>();
+        $r0.<com.moplus.moplusapp.MoPlusActivity: java.util.ArrayList l> = null;
+        $r1 = new com.moplus.moplusapp.MoPlusActivity$1;
+        specialinvoke $r1.<com.moplus.moplusapp.MoPlusActivity$1: void <init>(com.moplus.moplusapp.MoPlusActivity)>($r0);
+        $r0.<com.moplus.moplusapp.MoPlusActivity: android.os.Handler m> = $r1;
+        $r0.<com.moplus.moplusapp.MoPlusActivity: boolean o> = 0;
+        return;
+    }
+
+    static java.lang.String a(com.moplus.moplusapp.MoPlusActivity)
+    {
+        com.moplus.moplusapp.MoPlusActivity $r0;
+        java.lang.String $r1;
+
+        $r0 := @parameter0: com.moplus.moplusapp.MoPlusActivity;
+        $r1 = $r0.<com.moplus.moplusapp.MoPlusActivity: java.lang.String j>;
+        return $r1;
+    }
+
+    private void a(int)
+    {
+        com.moplus.moplusapp.MoPlusActivity $r0;
+        int $i0;
+        android.app.AlertDialog$Builder $r1, $r2;
+        com.moplus.moplusapp.MoPlusActivity$5 $r3;
+        android.app.AlertDialog $r4;
+        java.lang.Exception $r5;
+
+        $r0 := @this: com.moplus.moplusapp.MoPlusActivity;
+        $i0 := @parameter0: int;
+        $r1 = new android.app.AlertDialog$Builder;
+
+     label0:
+        specialinvoke $r1.<android.app.AlertDialog$Builder: void <init>(android.content.Context)>($r0);
+        $r2 = virtualinvoke $r1.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setMessage(int)>($i0);
+        $r2 = virtualinvoke $r2.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setCancelable(boolean)>(0);
+        $r3 = new com.moplus.moplusapp.MoPlusActivity$5;
+        specialinvoke $r3.<com.moplus.moplusapp.MoPlusActivity$5: void <init>(com.moplus.moplusapp.MoPlusActivity)>($r0);
+        virtualinvoke $r2.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setPositiveButton(int,android.content.DialogInterface$OnClickListener)>(2131296379, $r3);
+        $r4 = virtualinvoke $r1.<android.app.AlertDialog$Builder: android.app.AlertDialog create()>();
+        $r0.<com.moplus.moplusapp.MoPlusActivity: android.app.AlertDialog v> = $r4;
+        $r4 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.app.AlertDialog v>;
+        virtualinvoke $r4.<android.app.AlertDialog: void show()>();
+
+     label1:
+        return;
+
+     label2:
+        $r5 := @caughtexception;
+        virtualinvoke $r5.<java.lang.Exception: void printStackTrace()>();
+        goto label1;
+
+        catch java.lang.Exception from label0 to label1 with label2;
+    }
+
+    static void a(com.moplus.moplusapp.MoPlusActivity, int)
+    {
+        com.moplus.moplusapp.MoPlusActivity $r0;
+        int $i0;
+
+        $r0 := @parameter0: com.moplus.moplusapp.MoPlusActivity;
+        $i0 := @parameter1: int;
+        specialinvoke $r0.<com.moplus.moplusapp.MoPlusActivity: void b(int)>($i0);
+        return;
+    }
+
+    static void a(com.moplus.moplusapp.MoPlusActivity, boolean)
+    {
+        com.moplus.moplusapp.MoPlusActivity $r0;
+        boolean $z0;
+
+        $r0 := @parameter0: com.moplus.moplusapp.MoPlusActivity;
+        $z0 := @parameter1: boolean;
+        $r0.<com.moplus.moplusapp.MoPlusActivity: boolean o> = $z0;
+        return;
+    }
+
+    static com.moplus.moplusapp.e.h b(com.moplus.moplusapp.MoPlusActivity)
+    {
+        com.moplus.moplusapp.MoPlusActivity $r0;
+        com.moplus.moplusapp.e.h $r1;
+
+        $r0 := @parameter0: com.moplus.moplusapp.MoPlusActivity;
+        $r1 = $r0.<com.moplus.moplusapp.MoPlusActivity: com.moplus.moplusapp.e.h p>;
+        return $r1;
+    }
+
+    private void b(int)
+    {
+        com.moplus.moplusapp.MoPlusActivity $r0;
+        int $i0, $i1;
+        boolean $z0;
+        java.util.Iterator $r1;
+        java.lang.String $r2, $r4, $r7;
+        java.lang.StringBuilder $r3;
+        java.util.ArrayList $r5;
+        java.lang.Object $r6;
+        com.ihs.h.a.f $r8;
+
+        $r0 := @this: com.moplus.moplusapp.MoPlusActivity;
+        $i0 := @parameter0: int;
+        $z0 = staticinvoke <com.moplus.moplusapp.e.c: boolean b(int)>($i0);
+        if $z0 == 0 goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $r5 = new java.util.ArrayList;
+        specialinvoke $r5.<java.util.ArrayList: void <init>()>();
+        $r0.<com.moplus.moplusapp.MoPlusActivity: java.util.ArrayList l> = $r5;
+        $i1 = <com.moplus.moplusapp.e.e: int q>;
+        if $i1 == $i0 goto label2;
+
+        $i1 = <com.moplus.moplusapp.e.e: int p>;
+        if $i0 != $i1 goto label6;
+
+     label2:
+        $r5 = <com.moplus.moplusapp.e.d: java.util.ArrayList e>;
+        $r1 = virtualinvoke $r5.<java.util.ArrayList: java.util.Iterator iterator()>();
+
+     label3:
+        $z0 = interfaceinvoke $r1.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label0;
+
+        $r6 = interfaceinvoke $r1.<java.util.Iterator: java.lang.Object next()>();
+        $r7 = (java.lang.String) $r6;
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("file name is ");
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r7);
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.ihs.i.c: void a(java.lang.String,java.lang.String)>("ihsguide", $r4);
+        $r8 = new com.ihs.h.a.f;
+        specialinvoke $r8.<com.ihs.h.a.f: void <init>(com.ihs.h.a.g)>($r0);
+        $z0 = staticinvoke <com.ihs.i.c: boolean a()>();
+        if $z0 == 0 goto label5;
+
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("http://moplusdevelop.s3.amazonaws.com/androidmonkey/googlesetupinstructions/");
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r7);
+        $r7 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r8.<com.ihs.h.a.f: void a(java.lang.String)>($r7);
+
+     label4:
+        $r5 = $r0.<com.moplus.moplusapp.MoPlusActivity: java.util.ArrayList l>;
+        virtualinvoke $r5.<java.util.ArrayList: boolean add(java.lang.Object)>($r8);
+        goto label3;
+
+     label5:
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("http://cdn.mopl.us/androidmonkey/googlesetupinstructions/");
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r7);
+        $r7 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r8.<com.ihs.h.a.f: void a(java.lang.String)>($r7);
+        goto label4;
+
+     label6:
+        $i1 = <com.moplus.moplusapp.e.e: int r>;
+        if $i1 != $i0 goto label0;
+
+        $r5 = <com.moplus.moplusapp.e.d: java.util.ArrayList f>;
+        $r1 = virtualinvoke $r5.<java.util.ArrayList: java.util.Iterator iterator()>();
+
+     label7:
+        $z0 = interfaceinvoke $r1.<java.util.Iterator: boolean hasNext()>();
+        if $z0 == 0 goto label0;
+
+        $r6 = interfaceinvoke $r1.<java.util.Iterator: java.lang.Object next()>();
+        $r7 = (java.lang.String) $r6;
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("file name is ");
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r7);
+        $r2 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.ihs.i.c: void a(java.lang.String,java.lang.String)>("ihsguide", $r2);
+        $r8 = new com.ihs.h.a.f;
+        specialinvoke $r8.<com.ihs.h.a.f: void <init>(com.ihs.h.a.g)>($r0);
+        $z0 = staticinvoke <com.ihs.i.c: boolean a()>();
+        if $z0 == 0 goto label9;
+
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("http://moplusdevelop.s3.amazonaws.com/androidmonkey/googlesetupinstructions/");
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r7);
+        $r7 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r8.<com.ihs.h.a.f: void a(java.lang.String)>($r7);
+
+     label8:
+        $r5 = $r0.<com.moplus.moplusapp.MoPlusActivity: java.util.ArrayList l>;
+        virtualinvoke $r5.<java.util.ArrayList: boolean add(java.lang.Object)>($r8);
+        goto label7;
+
+     label9:
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("http://cdn.mopl.us/androidmonkey/googlesetupinstructions/");
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r7);
+        $r7 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r8.<com.ihs.h.a.f: void a(java.lang.String)>($r7);
+        goto label8;
+    }
+
+    static void b(com.moplus.moplusapp.MoPlusActivity, int)
+    {
+        com.moplus.moplusapp.MoPlusActivity $r0;
+        int $i0;
+
+        $r0 := @parameter0: com.moplus.moplusapp.MoPlusActivity;
+        $i0 := @parameter1: int;
+        specialinvoke $r0.<com.moplus.moplusapp.MoPlusActivity: void a(int)>($i0);
+        return;
+    }
+
+    static java.lang.String c(com.moplus.moplusapp.MoPlusActivity)
+    {
+        com.moplus.moplusapp.MoPlusActivity $r0;
+        java.lang.String $r1;
+
+        $r0 := @parameter0: com.moplus.moplusapp.MoPlusActivity;
+        $r1 = $r0.<com.moplus.moplusapp.MoPlusActivity: java.lang.String k>;
+        return $r1;
+    }
+
+    static android.widget.EditText d(com.moplus.moplusapp.MoPlusActivity)
+    {
+        com.moplus.moplusapp.MoPlusActivity $r0;
+        android.widget.EditText $r1;
+
+        $r0 := @parameter0: com.moplus.moplusapp.MoPlusActivity;
+        $r1 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.widget.EditText d>;
+        return $r1;
+    }
+
+    private boolean d()
+    {
+        com.moplus.moplusapp.MoPlusActivity $r0;
+        boolean $z0;
+
+        $r0 := @this: com.moplus.moplusapp.MoPlusActivity;
+        $z0 = specialinvoke $r0.<com.moplus.moplusapp.MoPlusActivity: boolean e()>();
+        if $z0 != 0 goto label0;
+
+        $z0 = specialinvoke $r0.<com.moplus.moplusapp.MoPlusActivity: boolean f()>();
+        if $z0 != 0 goto label0;
+
+        return 0;
+
+     label0:
+        return 1;
+    }
+
+    static java.util.Map e(com.moplus.moplusapp.MoPlusActivity)
+    {
+        com.moplus.moplusapp.MoPlusActivity $r0;
+        java.util.Map $r1;
+
+        $r0 := @parameter0: com.moplus.moplusapp.MoPlusActivity;
+        $r1 = $r0.<com.moplus.moplusapp.MoPlusActivity: java.util.Map q>;
+        return $r1;
+    }
+
+    private boolean e()
+    {
+        com.moplus.moplusapp.MoPlusActivity $r0;
+        android.content.ContentResolver $r1;
+        int $i0;
+        java.lang.String[] $r3, $r6;
+        android.content.res.Resources $r4;
+        android.net.Uri $r5;
+        java.lang.String $r7;
+        android.database.Cursor $r8;
+
+        $r0 := @this: com.moplus.moplusapp.MoPlusActivity;
+        $r1 = virtualinvoke $r0.<com.moplus.moplusapp.MoPlusActivity: android.content.ContentResolver getContentResolver()>();
+        $r5 = staticinvoke <android.net.Uri: android.net.Uri parse(java.lang.String)>("content://com.android.launcher.settings/favorites?notify=true");
+        $r6 = newarray (java.lang.String)[2];
+        $i0 = (int) 0;
+        $r6[$i0] = "title";
+        $i0 = (int) 1;
+        $r6[$i0] = "iconResource";
+        $i0 = (int) 1;
+        $r3 = newarray (java.lang.String)[$i0];
+        $r4 = virtualinvoke $r0.<com.moplus.moplusapp.MoPlusActivity: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r4.<android.content.res.Resources: java.lang.String getString(int)>(2131296257);
+        $r7 = virtualinvoke $r7.<java.lang.String: java.lang.String trim()>();
+        $i0 = (int) 0;
+        $r3[$i0] = $r7;
+        $r8 = virtualinvoke $r1.<android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)>($r5, $r6, "title=?", $r3, null);
+        if $r8 == null goto label0;
+
+        $i0 = interfaceinvoke $r8.<android.database.Cursor: int getCount()>();
+        if $i0 <= 0 goto label0;
+
+        return 1;
+
+     label0:
+        return 0;
+    }
+
+    static android.widget.EditText f(com.moplus.moplusapp.MoPlusActivity)
+    {
+        com.moplus.moplusapp.MoPlusActivity $r0;
+        android.widget.EditText $r1;
+
+        $r0 := @parameter0: com.moplus.moplusapp.MoPlusActivity;
+        $r1 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.widget.EditText c>;
+        return $r1;
+    }
+
+    private boolean f()
+    {
+        com.moplus.moplusapp.MoPlusActivity $r0;
+        android.content.ContentResolver $r1;
+        int $i0;
+        java.lang.String[] $r3, $r6;
+        android.content.res.Resources $r4;
+        android.net.Uri $r5;
+        java.lang.String $r7;
+        android.database.Cursor $r8;
+
+        $r0 := @this: com.moplus.moplusapp.MoPlusActivity;
+        $r1 = virtualinvoke $r0.<com.moplus.moplusapp.MoPlusActivity: android.content.ContentResolver getContentResolver()>();
+        $r5 = staticinvoke <android.net.Uri: android.net.Uri parse(java.lang.String)>("content://com.android.launcher2.settings/favorites?notify=true");
+        $r6 = newarray (java.lang.String)[2];
+        $i0 = (int) 0;
+        $r6[$i0] = "title";
+        $i0 = (int) 1;
+        $r6[$i0] = "iconResource";
+        $i0 = (int) 1;
+        $r3 = newarray (java.lang.String)[$i0];
+        $r4 = virtualinvoke $r0.<com.moplus.moplusapp.MoPlusActivity: android.content.res.Resources getResources()>();
+        $r7 = virtualinvoke $r4.<android.content.res.Resources: java.lang.String getString(int)>(2131296257);
+        $r7 = virtualinvoke $r7.<java.lang.String: java.lang.String trim()>();
+        $i0 = (int) 0;
+        $r3[$i0] = $r7;
+        $r8 = virtualinvoke $r1.<android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)>($r5, $r6, "title=?", $r3, null);
+        if $r8 == null goto label0;
+
+        $i0 = interfaceinvoke $r8.<android.database.Cursor: int getCount()>();
+        if $i0 <= 0 goto label0;
+
+        return 1;
+
+     label0:
+        return 0;
+    }
+
+    static android.widget.Button g(com.moplus.moplusapp.MoPlusActivity)
+    {
+        com.moplus.moplusapp.MoPlusActivity $r0;
+        android.widget.Button $r1;
+
+        $r0 := @parameter0: com.moplus.moplusapp.MoPlusActivity;
+        $r1 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.widget.Button b>;
+        return $r1;
+    }
+
+    static android.widget.ProgressBar h(com.moplus.moplusapp.MoPlusActivity)
+    {
+        com.moplus.moplusapp.MoPlusActivity $r0;
+        android.widget.ProgressBar $r1;
+
+        $r0 := @parameter0: com.moplus.moplusapp.MoPlusActivity;
+        $r1 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.widget.ProgressBar e>;
+        return $r1;
+    }
+
+    static android.view.View i(com.moplus.moplusapp.MoPlusActivity)
+    {
+        com.moplus.moplusapp.MoPlusActivity $r0;
+        android.view.View $r1;
+
+        $r0 := @parameter0: com.moplus.moplusapp.MoPlusActivity;
+        $r1 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.view.View r>;
+        return $r1;
+    }
+
+    static android.view.View j(com.moplus.moplusapp.MoPlusActivity)
+    {
+        com.moplus.moplusapp.MoPlusActivity $r0;
+        android.view.View $r1;
+
+        $r0 := @parameter0: com.moplus.moplusapp.MoPlusActivity;
+        $r1 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.view.View s>;
+        return $r1;
+    }
+
+    static android.widget.ImageView k(com.moplus.moplusapp.MoPlusActivity)
+    {
+        com.moplus.moplusapp.MoPlusActivity $r0;
+        android.widget.ImageView $r1;
+
+        $r0 := @parameter0: com.moplus.moplusapp.MoPlusActivity;
+        $r1 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.widget.ImageView g>;
+        return $r1;
+    }
+
+    static android.widget.ImageView l(com.moplus.moplusapp.MoPlusActivity)
+    {
+        com.moplus.moplusapp.MoPlusActivity $r0;
+        android.widget.ImageView $r1;
+
+        $r0 := @parameter0: com.moplus.moplusapp.MoPlusActivity;
+        $r1 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.widget.ImageView h>;
+        return $r1;
+    }
+
+    public void a()
+    {
+        com.moplus.moplusapp.MoPlusActivity $r0;
+        android.content.Intent $r1, $r7;
+        java.lang.String $r2;
+        android.content.Context $r5;
+        android.content.Intent$ShortcutIconResource $r6;
+
+        $r0 := @this: com.moplus.moplusapp.MoPlusActivity;
+        $r1 = new android.content.Intent;
+        specialinvoke $r1.<android.content.Intent: void <init>(java.lang.String)>("com.android.launcher.action.INSTALL_SHORTCUT");
+        virtualinvoke $r1.<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)>("duplicate", 0);
+        $r2 = virtualinvoke $r0.<com.moplus.moplusapp.MoPlusActivity: java.lang.String getString(int)>(2131296257);
+        virtualinvoke $r1.<android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)>("android.intent.extra.shortcut.NAME", $r2);
+        $r5 = virtualinvoke $r0.<com.moplus.moplusapp.MoPlusActivity: android.content.Context getApplicationContext()>();
+        $r6 = staticinvoke <android.content.Intent$ShortcutIconResource: android.content.Intent$ShortcutIconResource fromContext(android.content.Context,int)>($r5, 2130837515);
+        virtualinvoke $r1.<android.content.Intent: android.content.Intent putExtra(java.lang.String,android.os.Parcelable)>("android.intent.extra.shortcut.ICON_RESOURCE", $r6);
+        $r7 = new android.content.Intent;
+        $r5 = virtualinvoke $r0.<com.moplus.moplusapp.MoPlusActivity: android.content.Context getApplicationContext()>();
+        specialinvoke $r7.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r5, class "com/moplus/moplusapp/ui/MainActivity");
+        virtualinvoke $r7.<android.content.Intent: android.content.Intent setAction(java.lang.String)>("android.intent.action.MAIN");
+        virtualinvoke $r7.<android.content.Intent: android.content.Intent addCategory(java.lang.String)>("android.intent.category.LAUNCHER");
+        virtualinvoke $r1.<android.content.Intent: android.content.Intent putExtra(java.lang.String,android.os.Parcelable)>("android.intent.extra.shortcut.INTENT", $r7);
+        virtualinvoke $r0.<com.moplus.moplusapp.MoPlusActivity: void sendBroadcast(android.content.Intent)>($r1);
+        return;
+    }
+
+    public void a(com.ihs.h.a.f)
+    {
+        com.moplus.moplusapp.MoPlusActivity $r0;
+        com.ihs.h.a.f $r1;
+        android.util.DisplayMetrics $r2;
+        android.view.WindowManager $r3;
+        android.graphics.BitmapFactory$Options $r4;
+        android.graphics.Rect $r5;
+        int $i2, $i4, $i5, $i6;
+        java.lang.StringBuilder $r6;
+        java.lang.String $r7, $r9;
+        android.view.Display $r8;
+        boolean $z0;
+        java.util.ArrayList $r10;
+        java.lang.Object $r11;
+        java.io.FileOutputStream $r12;
+        java.io.InputStream $r14;
+        android.graphics.Bitmap $r15;
+        android.content.Context $r16;
+        android.graphics.Bitmap$CompressFormat $r18;
+        java.io.FileNotFoundException $r19;
+        java.io.IOException $r20, $r21, $r22, $r24, $r25;
+        java.lang.Throwable $r23;
+
+        $r0 := @this: com.moplus.moplusapp.MoPlusActivity;
+        $r1 := @parameter0: com.ihs.h.a.f;
+        $r2 = new android.util.DisplayMetrics;
+        specialinvoke $r2.<android.util.DisplayMetrics: void <init>()>();
+        $r3 = virtualinvoke $r0.<com.moplus.moplusapp.MoPlusActivity: android.view.WindowManager getWindowManager()>();
+        $r8 = interfaceinvoke $r3.<android.view.WindowManager: android.view.Display getDefaultDisplay()>();
+        virtualinvoke $r8.<android.view.Display: void getMetrics(android.util.DisplayMetrics)>($r2);
+        $r4 = new android.graphics.BitmapFactory$Options;
+        specialinvoke $r4.<android.graphics.BitmapFactory$Options: void <init>()>();
+        $i2 = $r2.<android.util.DisplayMetrics: int densityDpi>;
+        $r4.<android.graphics.BitmapFactory$Options: int inTargetDensity> = $i2;
+        $r4.<android.graphics.BitmapFactory$Options: int inDensity> = 360;
+        $r4.<android.graphics.BitmapFactory$Options: boolean inScaled> = 1;
+        $i2 = $r2.<android.util.DisplayMetrics: int densityDpi>;
+        $r4.<android.graphics.BitmapFactory$Options: int inScreenDensity> = $i2;
+        $r5 = new android.graphics.Rect;
+        specialinvoke $r5.<android.graphics.Rect: void <init>(int,int,int,int)>(-1, -1, -1, -1);
+        staticinvoke <com.ihs.i.c: void a(java.lang.String,java.lang.String)>("ihsguide", "read picture sucessfully ");
+        if $r1 != null goto label1;
+
+     label0:
+        return;
+
+     label1:
+        $r10 = $r0.<com.moplus.moplusapp.MoPlusActivity: java.util.ArrayList l>;
+        $i2 = virtualinvoke $r10.<java.util.ArrayList: int size()>();
+        $i4 = 0;
+
+     label2:
+        if $i4 >= $i2 goto label0;
+
+        $r10 = $r0.<com.moplus.moplusapp.MoPlusActivity: java.util.ArrayList l>;
+        $r11 = virtualinvoke $r10.<java.util.ArrayList: java.lang.Object get(int)>($i4);
+        $z0 = virtualinvoke $r1.<java.lang.Object: boolean equals(java.lang.Object)>($r11);
+        if $z0 == 0 goto label9;
+
+        $i5 = <com.moplus.moplusapp.e.e: int q>;
+        $i6 = <com.moplus.moplusapp.e.e: int o>;
+        if $i5 == $i6 goto label3;
+
+        $i6 = <com.moplus.moplusapp.e.e: int o>;
+        $i5 = <com.moplus.moplusapp.e.e: int p>;
+        if $i6 != $i5 goto label10;
+
+     label3:
+        $r10 = <com.moplus.moplusapp.e.d: java.util.ArrayList e>;
+        $r11 = virtualinvoke $r10.<java.util.ArrayList: java.lang.Object get(int)>($i4);
+        $r9 = (java.lang.String) $r11;
+
+     label4:
+        $r12 = null;
+
+     label5:
+        $r6 = new java.lang.StringBuilder;
+
+     label6:
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>(java.lang.String)>("save file name is ");
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r9);
+        $r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.ihs.i.c: void a(java.lang.String,java.lang.String)>("ihsguide", $r7);
+        $r14 = virtualinvoke $r1.<com.ihs.h.a.f: java.io.InputStream a()>();
+        $r15 = staticinvoke <android.graphics.BitmapFactory: android.graphics.Bitmap decodeStream(java.io.InputStream,android.graphics.Rect,android.graphics.BitmapFactory$Options)>($r14, $r5, $r4);
+        $r16 = <com.ihs.i.a: android.content.Context a>;
+        $r12 = virtualinvoke $r16.<android.content.Context: java.io.FileOutputStream openFileOutput(java.lang.String,int)>($r9, 0);
+        $r18 = <android.graphics.Bitmap$CompressFormat: android.graphics.Bitmap$CompressFormat JPEG>;
+        virtualinvoke $r15.<android.graphics.Bitmap: boolean compress(android.graphics.Bitmap$CompressFormat,int,java.io.OutputStream)>($r18, 90, $r12);
+        virtualinvoke $r12.<java.io.FileOutputStream: void flush()>();
+        virtualinvoke $r12.<java.io.FileOutputStream: void close()>();
+        virtualinvoke $r15.<android.graphics.Bitmap: void recycle()>();
+
+     label7:
+        if $r12 == null goto label9;
+
+     label8:
+        virtualinvoke $r12.<java.io.FileOutputStream: void close()>();
+
+     label9:
+        $i4 = $i4 + 1;
+        goto label2;
+
+     label10:
+        $i6 = <com.moplus.moplusapp.e.e: int r>;
+        $i5 = <com.moplus.moplusapp.e.e: int o>;
+        if $i6 != $i5 goto label0;
+
+        $r10 = <com.moplus.moplusapp.e.d: java.util.ArrayList f>;
+        $r11 = virtualinvoke $r10.<java.util.ArrayList: java.lang.Object get(int)>($i4);
+        $r9 = (java.lang.String) $r11;
+        goto label4;
+
+     label11:
+        $r19 := @caughtexception;
+
+     label12:
+        virtualinvoke $r19.<java.io.FileNotFoundException: void printStackTrace()>();
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>(java.lang.String)>("save file failed,  name is ");
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r9);
+        $r9 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.ihs.i.c: void a(java.lang.String,java.lang.String)>("ihsguide", $r9);
+
+     label13:
+        if $r12 == null goto label9;
+
+     label14:
+        virtualinvoke $r12.<java.io.FileOutputStream: void close()>();
+
+     label15:
+        goto label9;
+
+     label16:
+        $r20 := @caughtexception;
+        virtualinvoke $r20.<java.io.IOException: void printStackTrace()>();
+        goto label9;
+
+     label17:
+        $r21 := @caughtexception;
+
+     label18:
+        virtualinvoke $r21.<java.io.IOException: void printStackTrace()>();
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>(java.lang.String)>("save file failed,  name is ");
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r9);
+        $r9 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.ihs.i.c: void a(java.lang.String,java.lang.String)>("ihsguide", $r9);
+
+     label19:
+        if $r12 == null goto label9;
+
+     label20:
+        virtualinvoke $r12.<java.io.FileOutputStream: void close()>();
+
+     label21:
+        goto label9;
+
+     label22:
+        $r22 := @caughtexception;
+        virtualinvoke $r22.<java.io.IOException: void printStackTrace()>();
+        goto label9;
+
+     label23:
+        $r23 := @caughtexception;
+        if $r12 == null goto label25;
+
+     label24:
+        virtualinvoke $r12.<java.io.FileOutputStream: void close()>();
+
+     label25:
+        throw $r23;
+
+     label26:
+        $r24 := @caughtexception;
+        virtualinvoke $r24.<java.io.IOException: void printStackTrace()>();
+        goto label25;
+
+     label27:
+        $r25 := @caughtexception;
+        virtualinvoke $r25.<java.io.IOException: void printStackTrace()>();
+        goto label9;
+
+        catch java.io.FileNotFoundException from label6 to label7 with label11;
+        catch java.io.IOException from label6 to label7 with label17;
+        catch java.lang.Throwable from label5 to label7 with label23;
+        catch java.io.IOException from label8 to label9 with label27;
+        catch java.lang.Throwable from label12 to label13 with label23;
+        catch java.io.IOException from label14 to label15 with label16;
+        catch java.lang.Throwable from label18 to label19 with label23;
+        catch java.io.IOException from label20 to label21 with label22;
+        catch java.io.IOException from label24 to label25 with label26;
+    }
+
+    public void a(com.ihs.h.a.f, java.lang.Exception)
+    {
+        com.moplus.moplusapp.MoPlusActivity $r0;
+        com.ihs.h.a.f $r1;
+        java.lang.Exception $r2;
+        java.lang.StringBuilder $r4;
+        java.lang.String $r5;
+
+        $r0 := @this: com.moplus.moplusapp.MoPlusActivity;
+        $r1 := @parameter0: com.ihs.h.a.f;
+        $r2 := @parameter1: java.lang.Exception;
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>("read picture error, msg is ");
+        $r5 = virtualinvoke $r2.<java.lang.Exception: java.lang.String getMessage()>();
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+        $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.ihs.i.c: void a(java.lang.String,java.lang.String)>("ihsguide", $r5);
+        return;
+    }
+
+    protected void b()
+    {
+        com.moplus.moplusapp.MoPlusActivity $r0;
+        int $i0;
+        com.moplus.moplusapp.e.h $r1;
+        java.lang.String $r2, $r15;
+        java.lang.String[] $r3;
+        boolean $z1, $z2;
+        android.view.View $r4;
+        android.widget.Button $r5;
+        android.widget.EditText $r6;
+        android.widget.ImageView $r7;
+        android.widget.ProgressBar $r8;
+        android.content.Context $r9;
+        java.lang.Object $r10;
+        android.app.NotificationManager $r11;
+        com.moplus.moplusapp.d.b $r12;
+        com.moplus.moplusapp.e.k $r13;
+        com.moplus.moplusapp.MoPlusActivity$2 $r14;
+        android.database.Cursor $r16;
+
+        $r0 := @this: com.moplus.moplusapp.MoPlusActivity;
+        $r4 = virtualinvoke $r0.<com.moplus.moplusapp.MoPlusActivity: android.view.View findViewById(int)>(2131427573);
+        $r0.<com.moplus.moplusapp.MoPlusActivity: android.view.View t> = $r4;
+        $r4 = virtualinvoke $r0.<com.moplus.moplusapp.MoPlusActivity: android.view.View findViewById(int)>(2131427559);
+        $r0.<com.moplus.moplusapp.MoPlusActivity: android.view.View u> = $r4;
+        $r4 = virtualinvoke $r0.<com.moplus.moplusapp.MoPlusActivity: android.view.View findViewById(int)>(2131427569);
+        $r5 = (android.widget.Button) $r4;
+        $r0.<com.moplus.moplusapp.MoPlusActivity: android.widget.Button b> = $r5;
+        $r4 = virtualinvoke $r0.<com.moplus.moplusapp.MoPlusActivity: android.view.View findViewById(int)>(2131427564);
+        $r6 = (android.widget.EditText) $r4;
+        $r0.<com.moplus.moplusapp.MoPlusActivity: android.widget.EditText c> = $r6;
+        $r4 = virtualinvoke $r0.<com.moplus.moplusapp.MoPlusActivity: android.view.View findViewById(int)>(2131427567);
+        $r6 = (android.widget.EditText) $r4;
+        $r0.<com.moplus.moplusapp.MoPlusActivity: android.widget.EditText d> = $r6;
+        $r4 = virtualinvoke $r0.<com.moplus.moplusapp.MoPlusActivity: android.view.View findViewById(int)>(2131427414);
+        $r7 = (android.widget.ImageView) $r4;
+        $r0.<com.moplus.moplusapp.MoPlusActivity: android.widget.ImageView g> = $r7;
+        $r4 = virtualinvoke $r0.<com.moplus.moplusapp.MoPlusActivity: android.view.View findViewById(int)>(2131427568);
+        $r7 = (android.widget.ImageView) $r4;
+        $r0.<com.moplus.moplusapp.MoPlusActivity: android.widget.ImageView h> = $r7;
+        $r4 = virtualinvoke $r0.<com.moplus.moplusapp.MoPlusActivity: android.view.View findViewById(int)>(2131427563);
+        $r0.<com.moplus.moplusapp.MoPlusActivity: android.view.View r> = $r4;
+        $r4 = virtualinvoke $r0.<com.moplus.moplusapp.MoPlusActivity: android.view.View findViewById(int)>(2131427566);
+        $r0.<com.moplus.moplusapp.MoPlusActivity: android.view.View s> = $r4;
+        $r6 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.widget.EditText c>;
+        $r1 = $r0.<com.moplus.moplusapp.MoPlusActivity: com.moplus.moplusapp.e.h p>;
+        $i0 = (int) 0;
+        $r3 = newarray (java.lang.String)[$i0];
+        $r2 = virtualinvoke $r1.<com.moplus.moplusapp.e.h: java.lang.String a(java.lang.String,java.lang.String[])>("avatar", $r3);
+        virtualinvoke $r6.<android.widget.EditText: void setText(java.lang.CharSequence)>($r2);
+        $r6 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.widget.EditText d>;
+        $r1 = $r0.<com.moplus.moplusapp.MoPlusActivity: com.moplus.moplusapp.e.h p>;
+        $i0 = (int) 0;
+        $r3 = newarray (java.lang.String)[$i0];
+        $r2 = virtualinvoke $r1.<com.moplus.moplusapp.e.h: java.lang.String a(java.lang.String,java.lang.String[])>("ihandysoft", $r3);
+        virtualinvoke $r6.<android.widget.EditText: void setText(java.lang.CharSequence)>($r2);
+        $r4 = virtualinvoke $r0.<com.moplus.moplusapp.MoPlusActivity: android.view.View findViewById(int)>(2131427570);
+        $r8 = (android.widget.ProgressBar) $r4;
+        $r0.<com.moplus.moplusapp.MoPlusActivity: android.widget.ProgressBar e> = $r8;
+        $r9 = virtualinvoke $r0.<com.moplus.moplusapp.MoPlusActivity: android.content.Context getApplicationContext()>();
+        $r10 = virtualinvoke $r9.<android.content.Context: java.lang.Object getSystemService(java.lang.String)>("notification");
+        $r11 = (android.app.NotificationManager) $r10;
+        $r0.<com.moplus.moplusapp.MoPlusActivity: android.app.NotificationManager n> = $r11;
+        $r12 = <com.moplus.moplusapp.d.c: com.moplus.moplusapp.d.b a>;
+        if $r12 != null goto label3;
+
+        $r9 = virtualinvoke $r0.<com.moplus.moplusapp.MoPlusActivity: android.content.Context getApplicationContext()>();
+        $r12 = staticinvoke <com.moplus.moplusapp.d.b: com.moplus.moplusapp.d.b a(android.content.Context)>($r9);
+        <com.moplus.moplusapp.d.c: com.moplus.moplusapp.d.b a> = $r12;
+        $r12 = <com.moplus.moplusapp.d.c: com.moplus.moplusapp.d.b a>;
+        virtualinvoke $r12.<com.moplus.moplusapp.d.b: void a()>();
+
+     label0:
+        $z1 = $r0.<com.moplus.moplusapp.MoPlusActivity: boolean i>;
+        if $z1 == 0 goto label2;
+
+        $z1 = $r0.<com.moplus.moplusapp.MoPlusActivity: boolean a>;
+        if $z1 == 0 goto label2;
+
+        $z1 = specialinvoke $r0.<com.moplus.moplusapp.MoPlusActivity: boolean d()>();
+        if $z1 != 0 goto label1;
+
+        virtualinvoke $r0.<com.moplus.moplusapp.MoPlusActivity: void a()>();
+
+     label1:
+        $r13 = staticinvoke <com.moplus.moplusapp.e.k: com.moplus.moplusapp.e.k a()>();
+        $r14 = new com.moplus.moplusapp.MoPlusActivity$2;
+        specialinvoke $r14.<com.moplus.moplusapp.MoPlusActivity$2: void <init>(com.moplus.moplusapp.MoPlusActivity)>($r0);
+        virtualinvoke $r13.<com.moplus.moplusapp.e.k: void b(java.lang.Runnable)>($r14);
+
+     label2:
+        return;
+
+     label3:
+        $r12 = <com.moplus.moplusapp.d.c: com.moplus.moplusapp.d.b a>;
+        $i0 = (int) 1;
+        $r3 = newarray (java.lang.String)[$i0];
+        $i0 = (int) 0;
+        $r3[$i0] = "related_id";
+        $r16 = virtualinvoke $r12.<com.moplus.moplusapp.d.b: android.database.Cursor a(java.lang.String,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String,java.lang.String,java.lang.String)>("all_contacts", $r3, null, null, null, null, null);
+        if $r16 != null goto label4;
+
+        $r0.<com.moplus.moplusapp.MoPlusActivity: boolean a> = 1;
+
+     label4:
+        $z2 = interfaceinvoke $r16.<android.database.Cursor: boolean moveToFirst()>();
+        if $z2 == 0 goto label6;
+
+        $i0 = (int) 0;
+        $r15 = interfaceinvoke $r16.<android.database.Cursor: java.lang.String getString(int)>($i0);
+        if $r15 == null goto label5;
+
+        $r0.<com.moplus.moplusapp.MoPlusActivity: boolean a> = 0;
+
+     label5:
+        interfaceinvoke $r16.<android.database.Cursor: void close()>();
+        goto label0;
+
+     label6:
+        $r0.<com.moplus.moplusapp.MoPlusActivity: boolean a> = 1;
+        goto label5;
+    }
+
+    protected void c()
+    {
+        com.moplus.moplusapp.MoPlusActivity $r0;
+        com.moplus.moplusapp.MoPlusActivity$3 $r1;
+        android.view.View $r2;
+        android.widget.Button $r3;
+        android.widget.ImageView $r4;
+        android.widget.EditText $r5;
+        com.moplus.moplusapp.e $r6;
+        com.moplus.moplusapp.MoPlusActivity$4 $r7;
+
+        $r0 := @this: com.moplus.moplusapp.MoPlusActivity;
+        $r2 = virtualinvoke $r0.<com.moplus.moplusapp.MoPlusActivity: android.view.View findViewById(int)>(2131427576);
+        virtualinvoke $r2.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r0);
+        $r3 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.widget.Button b>;
+        virtualinvoke $r3.<android.widget.Button: void setOnClickListener(android.view.View$OnClickListener)>($r0);
+        $r4 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.widget.ImageView g>;
+        virtualinvoke $r4.<android.widget.ImageView: void setOnClickListener(android.view.View$OnClickListener)>($r0);
+        $r4 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.widget.ImageView h>;
+        virtualinvoke $r4.<android.widget.ImageView: void setOnClickListener(android.view.View$OnClickListener)>($r0);
+        $r5 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.widget.EditText c>;
+        $r1 = new com.moplus.moplusapp.MoPlusActivity$3;
+        specialinvoke $r1.<com.moplus.moplusapp.MoPlusActivity$3: void <init>(com.moplus.moplusapp.MoPlusActivity)>($r0);
+        virtualinvoke $r5.<android.widget.EditText: void addTextChangedListener(android.text.TextWatcher)>($r1);
+        $r5 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.widget.EditText c>;
+        $r6 = new com.moplus.moplusapp.e;
+        specialinvoke $r6.<com.moplus.moplusapp.e: void <init>(com.moplus.moplusapp.MoPlusActivity)>($r0);
+        virtualinvoke $r5.<android.widget.EditText: void setOnFocusChangeListener(android.view.View$OnFocusChangeListener)>($r6);
+        $r5 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.widget.EditText d>;
+        $r7 = new com.moplus.moplusapp.MoPlusActivity$4;
+        specialinvoke $r7.<com.moplus.moplusapp.MoPlusActivity$4: void <init>(com.moplus.moplusapp.MoPlusActivity)>($r0);
+        virtualinvoke $r5.<android.widget.EditText: void addTextChangedListener(android.text.TextWatcher)>($r7);
+        $r5 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.widget.EditText d>;
+        $r6 = new com.moplus.moplusapp.e;
+        specialinvoke $r6.<com.moplus.moplusapp.e: void <init>(com.moplus.moplusapp.MoPlusActivity)>($r0);
+        virtualinvoke $r5.<android.widget.EditText: void setOnFocusChangeListener(android.view.View$OnFocusChangeListener)>($r6);
+        return;
+    }
+
+    public void onClick(android.view.View)
+    {
+        com.moplus.moplusapp.MoPlusActivity $r0;
+        android.view.View $r1;
+        int $i0, $i1, $i3;
+        java.lang.String $r2, $r6, $r7;
+        com.moplus.moplusapp.b $r3;
+        boolean $z1;
+        android.widget.EditText $r4;
+        android.text.Editable $r5;
+        com.ihs.a.a $r8;
+        android.widget.Button $r9;
+        android.widget.ProgressBar $r10;
+        com.moplus.moplusapp.a $r11;
+        android.os.Handler $r12;
+        android.widget.ImageView $r14;
+        android.view.inputmethod.InputMethodManager $r15;
+        android.os.IBinder $r16;
+
+        $r0 := @this: com.moplus.moplusapp.MoPlusActivity;
+        $r1 := @parameter0: android.view.View;
+        $i0 = virtualinvoke $r1.<android.view.View: int getId()>();
+        lookupswitch($i0)
+        {
+            case 2131427414: goto label5;
+            case 2131427564: goto label7;
+            case 2131427567: goto label8;
+            case 2131427568: goto label6;
+            case 2131427569: goto label1;
+            case 2131427576: goto label9;
+            default: goto label0;
+        };
+
+     label0:
+        return;
+
+     label1:
+        $z1 = $r0.<com.moplus.moplusapp.MoPlusActivity: boolean o>;
+        if $z1 != 0 goto label0;
+
+        $r0.<com.moplus.moplusapp.MoPlusActivity: boolean o> = 1;
+        $r4 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.widget.EditText c>;
+        $r5 = virtualinvoke $r4.<android.widget.EditText: android.text.Editable getText()>();
+        $r2 = interfaceinvoke $r5.<android.text.Editable: java.lang.String toString()>();
+        $r2 = virtualinvoke $r2.<java.lang.String: java.lang.String toLowerCase()>();
+        $r2 = virtualinvoke $r2.<java.lang.String: java.lang.String trim()>();
+        $r0.<com.moplus.moplusapp.MoPlusActivity: java.lang.String j> = $r2;
+        $r4 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.widget.EditText d>;
+        $r5 = virtualinvoke $r4.<android.widget.EditText: android.text.Editable getText()>();
+        $r2 = interfaceinvoke $r5.<android.text.Editable: java.lang.String toString()>();
+        $r2 = virtualinvoke $r2.<java.lang.String: java.lang.String trim()>();
+        $r0.<com.moplus.moplusapp.MoPlusActivity: java.lang.String k> = $r2;
+        $r2 = $r0.<com.moplus.moplusapp.MoPlusActivity: java.lang.String j>;
+        $z1 = staticinvoke <android.text.TextUtils: boolean isEmpty(java.lang.CharSequence)>($r2);
+        if $z1 != 0 goto label2;
+
+        $r2 = $r0.<com.moplus.moplusapp.MoPlusActivity: java.lang.String k>;
+        $z1 = staticinvoke <android.text.TextUtils: boolean isEmpty(java.lang.CharSequence)>($r2);
+        if $z1 == 0 goto label3;
+
+     label2:
+        $r0.<com.moplus.moplusapp.MoPlusActivity: boolean o> = 0;
+        goto label0;
+
+     label3:
+        $r2 = $r0.<com.moplus.moplusapp.MoPlusActivity: java.lang.String j>;
+        $z1 = virtualinvoke $r2.<java.lang.String: boolean endsWith(java.lang.String)>("@googlemail.com");
+        if $z1 == 0 goto label4;
+
+        $r6 = $r0.<com.moplus.moplusapp.MoPlusActivity: java.lang.String j>;
+        $r7 = virtualinvoke $r6.<java.lang.String: java.lang.String replaceFirst(java.lang.String,java.lang.String)>("@googlemail.com", "@gmail.com");
+        $r0.<com.moplus.moplusapp.MoPlusActivity: java.lang.String j> = $r7;
+
+     label4:
+        $r8 = staticinvoke <com.ihs.a.a: com.ihs.a.a a()>();
+        virtualinvoke $r8.<com.ihs.a.a: void a(java.lang.String)>("LoginButton_Clicked");
+        $r9 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.widget.Button b>;
+        virtualinvoke $r9.<android.widget.Button: void setText(java.lang.CharSequence)>("Connecting...");
+        $r10 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.widget.ProgressBar e>;
+        $i1 = (int) 0;
+        virtualinvoke $r10.<android.widget.ProgressBar: void setVisibility(int)>($i1);
+        $r9 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.widget.Button b>;
+        virtualinvoke $r9.<android.widget.Button: void setClickable(boolean)>(0);
+        $r4 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.widget.EditText d>;
+        virtualinvoke $r4.<android.widget.EditText: void clearFocus()>();
+        $r4 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.widget.EditText d>;
+        virtualinvoke $r4.<android.widget.EditText: void setFocusable(boolean)>(0);
+        $r4 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.widget.EditText c>;
+        virtualinvoke $r4.<android.widget.EditText: void setFocusable(boolean)>(0);
+        $r1 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.view.View r>;
+        virtualinvoke $r1.<android.view.View: void setBackgroundResource(int)>(2130837653);
+        $r1 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.view.View s>;
+        virtualinvoke $r1.<android.view.View: void setBackgroundResource(int)>(2130837653);
+        $r11 = new com.moplus.moplusapp.a;
+        $r12 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.os.Handler m>;
+        $r7 = $r0.<com.moplus.moplusapp.MoPlusActivity: java.lang.String j>;
+        $r2 = $r0.<com.moplus.moplusapp.MoPlusActivity: java.lang.String k>;
+        $r3 = <com.moplus.moplusapp.b: com.moplus.moplusapp.b a>;
+        specialinvoke $r11.<com.moplus.moplusapp.a: void <init>(android.os.Handler,android.content.Context,java.lang.String,java.lang.String,com.moplus.moplusapp.b)>($r12, $r0, $r7, $r2, $r3);
+        virtualinvoke $r11.<com.moplus.moplusapp.a: void a()>();
+        $r14 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.widget.ImageView g>;
+        virtualinvoke $r14.<android.widget.ImageView: void setVisibility(int)>(4);
+        $r14 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.widget.ImageView h>;
+        virtualinvoke $r14.<android.widget.ImageView: void setVisibility(int)>(4);
+        $r15 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.view.inputmethod.InputMethodManager f>;
+        $r4 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.widget.EditText d>;
+        $r16 = virtualinvoke $r4.<android.widget.EditText: android.os.IBinder getWindowToken()>();
+        $i3 = (int) 0;
+        virtualinvoke $r15.<android.view.inputmethod.InputMethodManager: boolean hideSoftInputFromWindow(android.os.IBinder,int)>($r16, $i3);
+        goto label0;
+
+     label5:
+        $r4 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.widget.EditText c>;
+        virtualinvoke $r4.<android.widget.EditText: void setText(java.lang.CharSequence)>("");
+        $r14 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.widget.ImageView g>;
+        virtualinvoke $r14.<android.widget.ImageView: void setVisibility(int)>(4);
+        goto label0;
+
+     label6:
+        $r4 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.widget.EditText d>;
+        virtualinvoke $r4.<android.widget.EditText: void setText(java.lang.CharSequence)>("");
+        $r14 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.widget.ImageView h>;
+        virtualinvoke $r14.<android.widget.ImageView: void setVisibility(int)>(4);
+        goto label0;
+
+     label7:
+        $r4 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.widget.EditText c>;
+        virtualinvoke $r4.<android.widget.EditText: boolean requestFocus()>();
+        $r1 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.view.View r>;
+        virtualinvoke $r1.<android.view.View: void setBackgroundResource(int)>(2130837654);
+        $r1 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.view.View s>;
+        virtualinvoke $r1.<android.view.View: void setBackgroundResource(int)>(2130837653);
+        goto label0;
+
+     label8:
+        $r4 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.widget.EditText d>;
+        virtualinvoke $r4.<android.widget.EditText: boolean requestFocus()>();
+        $r4 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.widget.EditText c>;
+        virtualinvoke $r4.<android.widget.EditText: void setVisibility(int)>(4);
+        $r1 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.view.View r>;
+        virtualinvoke $r1.<android.view.View: void setBackgroundResource(int)>(2130837653);
+        $r1 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.view.View s>;
+        virtualinvoke $r1.<android.view.View: void setBackgroundResource(int)>(2130837654);
+        goto label0;
+
+     label9:
+        $r8 = staticinvoke <com.ihs.a.a: com.ihs.a.a a()>();
+        virtualinvoke $r8.<com.ihs.a.a: void a(java.lang.String)>("FirstGoButton_Clicked");
+        $r1 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.view.View t>;
+        virtualinvoke $r1.<android.view.View: void setVisibility(int)>(4);
+        $r1 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.view.View u>;
+        $i3 = (int) 0;
+        virtualinvoke $r1.<android.view.View: void setVisibility(int)>($i3);
+        $r8 = staticinvoke <com.ihs.a.a: com.ihs.a.a a()>();
+        virtualinvoke $r8.<com.ihs.a.a: void a(java.lang.String)>("Login_Viewed");
+        goto label0;
+    }
+
+    public void onCreate(android.os.Bundle)
+    {
+        com.moplus.moplusapp.MoPlusActivity $r0;
+        android.os.Bundle $r1;
+        com.ihs.apps.framework.sub.a $r3;
+        com.ihs.f.b $r4;
+        android.content.Context $r5;
+        com.ihs.j.a $r6;
+        boolean $z1;
+        com.moplus.moplusapp.e.h $r7;
+        java.lang.Object $r8;
+        android.view.inputmethod.InputMethodManager $r9;
+        com.moplus.moplusapp.d.b $r10;
+        int $i0;
+        java.util.HashMap $r11;
+        com.ihs.h.a.c $r12;
+        java.util.Map $r13;
+
+        $r0 := @this: com.moplus.moplusapp.MoPlusActivity;
+        $r1 := @parameter0: android.os.Bundle;
+        <com.moplus.moplusapp.e.e: java.lang.String X> = "Direct";
+        $i0 = (int) 0;
+        <com.moplus.moplusapp.e.e: int V> = $i0;
+        specialinvoke $r0.<com.ihs.f.a: void onCreate(android.os.Bundle)>($r1);
+        $r4 = staticinvoke <com.ihs.f.b: com.ihs.f.b a()>();
+        $r3 = staticinvoke <com.ihs.apps.framework.sub.a: com.ihs.apps.framework.sub.a e()>();
+        virtualinvoke $r4.<com.ihs.f.b: void addObserver(java.util.Observer)>($r3);
+        staticinvoke <com.moplus.moplusapp.d.a: void a()>();
+        $r5 = virtualinvoke $r0.<com.moplus.moplusapp.MoPlusActivity: android.content.Context getApplicationContext()>();
+        <com.ihs.chatlib.i: android.content.Context d> = $r5;
+        $r6 = staticinvoke <com.ihs.j.a: com.ihs.j.a a()>();
+        $z1 = virtualinvoke $r6.<com.ihs.j.a: boolean c()>();
+        $r0.<com.moplus.moplusapp.MoPlusActivity: boolean i> = $z1;
+        $r7 = new com.moplus.moplusapp.e.h;
+        specialinvoke $r7.<com.moplus.moplusapp.e.h: void <init>(android.content.Context)>($r0);
+        $r0.<com.moplus.moplusapp.MoPlusActivity: com.moplus.moplusapp.e.h p> = $r7;
+        $r8 = virtualinvoke $r0.<com.moplus.moplusapp.MoPlusActivity: java.lang.Object getSystemService(java.lang.String)>("input_method");
+        $r9 = (android.view.inputmethod.InputMethodManager) $r8;
+        $r0.<com.moplus.moplusapp.MoPlusActivity: android.view.inputmethod.InputMethodManager f> = $r9;
+        $r5 = virtualinvoke $r0.<com.moplus.moplusapp.MoPlusActivity: android.content.Context getApplicationContext()>();
+        $r10 = staticinvoke <com.moplus.moplusapp.d.b: com.moplus.moplusapp.d.b a(android.content.Context)>($r5);
+        <com.moplus.moplusapp.d.c: com.moplus.moplusapp.d.b a> = $r10;
+        $r10 = <com.moplus.moplusapp.d.c: com.moplus.moplusapp.d.b a>;
+        virtualinvoke $r10.<com.moplus.moplusapp.d.b: void a()>();
+        <com.moplus.moplusapp.e.e: boolean P> = 0;
+        virtualinvoke $r0.<com.moplus.moplusapp.MoPlusActivity: void setContentView(int)>(2130903066);
+        $r11 = new java.util.HashMap;
+        specialinvoke $r11.<java.util.HashMap: void <init>()>();
+        $r0.<com.moplus.moplusapp.MoPlusActivity: java.util.Map q> = $r11;
+        $r12 = staticinvoke <com.ihs.h.a.c: com.ihs.h.a.c a()>();
+        $r13 = virtualinvoke $r12.<com.ihs.h.a.c: java.util.Map b()>();
+        staticinvoke <com.ihs.apps.framework.sub.c: void a(java.util.Map)>($r13);
+        virtualinvoke $r0.<com.moplus.moplusapp.MoPlusActivity: void b()>();
+        virtualinvoke $r0.<com.moplus.moplusapp.MoPlusActivity: void c()>();
+        return;
+    }
+
+    protected void onDestroy()
+    {
+        com.moplus.moplusapp.MoPlusActivity $r0;
+        android.app.AlertDialog $r1;
+        android.app.NotificationManager $r2;
+
+        $r0 := @this: com.moplus.moplusapp.MoPlusActivity;
+        $r1 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.app.AlertDialog v>;
+        if $r1 == null goto label0;
+
+        $r1 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.app.AlertDialog v>;
+        virtualinvoke $r1.<android.app.AlertDialog: void dismiss()>();
+
+     label0:
+        $r2 = $r0.<com.moplus.moplusapp.MoPlusActivity: android.app.NotificationManager n>;
+        virtualinvoke $r2.<android.app.NotificationManager: void cancelAll()>();
+        specialinvoke $r0.<com.ihs.f.a: void onDestroy()>();
+        return;
+    }
+
+    public boolean onKeyUp(int, android.view.KeyEvent)
+    {
+        com.moplus.moplusapp.MoPlusActivity $r0;
+        int $i0;
+        android.view.KeyEvent $r1;
+        boolean $z0;
+        com.ihs.gvoice.b $r2;
+
+        $r0 := @this: com.moplus.moplusapp.MoPlusActivity;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.view.KeyEvent;
+        if $i0 != 4 goto label0;
+
+        $r2 = new com.ihs.gvoice.b;
+        specialinvoke $r2.<com.ihs.gvoice.b: void <init>()>();
+        virtualinvoke $r2.<com.ihs.gvoice.b: void g()>();
+
+     label0:
+        $z0 = specialinvoke $r0.<com.ihs.f.a: boolean onKeyUp(int,android.view.KeyEvent)>($i0, $r1);
+        return $z0;
+    }
+
+    protected void onPause()
+    {
+        com.moplus.moplusapp.MoPlusActivity $r0;
+
+        $r0 := @this: com.moplus.moplusapp.MoPlusActivity;
+        specialinvoke $r0.<com.ihs.f.a: void onPause()>();
+        return;
+    }
+
+    protected void onRestart()
+    {
+        com.moplus.moplusapp.MoPlusActivity $r0;
+
+        $r0 := @this: com.moplus.moplusapp.MoPlusActivity;
+        <com.moplus.moplusapp.e.e: java.lang.String X> = "Direct";
+        specialinvoke $r0.<com.ihs.f.a: void onRestart()>();
+        return;
+    }
+
+    protected void onResume()
+    {
+        com.moplus.moplusapp.MoPlusActivity $r0;
+        com.ihs.h.a.c $r2;
+        java.util.Map $r4;
+        java.lang.Object $r5;
+
+        $r0 := @this: com.moplus.moplusapp.MoPlusActivity;
+        specialinvoke $r0.<com.ihs.f.a: void onResume()>();
+        <com.moplus.moplusapp.e.e: int K> = 0;
+        staticinvoke <com.ihs.i.c: void a(java.lang.String,java.lang.String)>("ihskey", "moplus onresume entranced");
+        $r2 = staticinvoke <com.ihs.h.a.c: com.ihs.h.a.c a()>();
+        $r4 = virtualinvoke $r2.<com.ihs.h.a.c: java.util.Map b()>();
+        if $r4 == null goto label0;
+
+        $r5 = interfaceinvoke $r4.<java.util.Map: java.lang.Object get(java.lang.Object)>("Data");
+        $r4 = (java.util.Map) $r5;
+        staticinvoke <com.moplus.moplusapp.e.d: void a(java.util.Map)>($r4);
+
+     label0:
+        return;
+    }
+
+    protected void onStart()
+    {
+        com.moplus.moplusapp.MoPlusActivity $r0;
+
+        $r0 := @this: com.moplus.moplusapp.MoPlusActivity;
+        specialinvoke $r0.<com.ihs.f.a: void onStart()>();
+        staticinvoke <com.ihs.i.c: void a(java.lang.String,java.lang.String)>("ihskey", "onstart main activity entrance");
+        return;
+    }
+
+    protected void onStop()
+    {
+        com.moplus.moplusapp.MoPlusActivity $r0;
+
+        $r0 := @this: com.moplus.moplusapp.MoPlusActivity;
+        specialinvoke $r0.<com.ihs.f.a: void onStop()>();
+        return;
+    }
+}

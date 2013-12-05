@@ -14,7 +14,7 @@ def main(**kawrgs):
 
     for app in apps:
         p = subprocess.Popen(["java", "-cp", "bin/AndroidInstrument.jar:lib/apk-parser-1.1.jar:lib/soot.jar:lib/opencsv-2.3.jar", "AndroidInstrument",
-            "-android-jars", "android-platforms", "-allow-phantom-refs", "-output-format", "n", "-process-dir", d+"/"+app], stdout=subprocess.PIPE)
+            "-android-jars", "android-platforms", "-allow-phantom-refs", "-output-format", "J", "-process-dir", d+"/"+app], stdout=subprocess.PIPE)
         print "Processing " + app
         print p.stdout.read()
         p.communicate()

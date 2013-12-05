@@ -1,0 +1,1019 @@
+public class com.trustgo.mobile.security.SecurityMainActivity extends com.trustgo.mobile.BaseActivity
+{
+    public static java.lang.String a;
+    private com.trustgo.a.c A;
+    private android.content.SharedPreferences$OnSharedPreferenceChangeListener B;
+    private android.content.DialogInterface$OnClickListener C;
+    private android.content.DialogInterface$OnClickListener D;
+    private android.content.DialogInterface$OnCancelListener E;
+    com.trustgo.e.a b;
+    private final int c;
+    private final int d;
+    private final int k;
+    private final int l;
+    private final int m;
+    private final int n;
+    private final int o;
+    private android.widget.TextView p;
+    private android.widget.TextView q;
+    private android.widget.TextView r;
+    private android.widget.TextView s;
+    private com.trustgo.common.q t;
+    private com.trustgo.common.q u;
+    private com.trustgo.common.f v;
+    private boolean w;
+    private com.trustgo.mobile.security.v x;
+    private java.lang.Boolean y;
+    private boolean z;
+
+    static void <clinit>()
+    {
+        <com.trustgo.mobile.security.SecurityMainActivity: java.lang.String a> = "from_other_action";
+        return;
+    }
+
+    public void <init>()
+    {
+        com.trustgo.mobile.security.SecurityMainActivity $r0;
+        int $i0;
+        java.lang.Boolean $r1;
+        com.trustgo.mobile.security.m $r2;
+        com.trustgo.mobile.security.w $r3;
+        com.trustgo.mobile.security.b $r4;
+        com.trustgo.mobile.security.a $r5;
+
+        $r0 := @this: com.trustgo.mobile.security.SecurityMainActivity;
+        specialinvoke $r0.<com.trustgo.mobile.BaseActivity: void <init>()>();
+        $i0 = (int) 0;
+        $r0.<com.trustgo.mobile.security.SecurityMainActivity: int c> = $i0;
+        $i0 = (int) 1;
+        $r0.<com.trustgo.mobile.security.SecurityMainActivity: int d> = $i0;
+        $r0.<com.trustgo.mobile.security.SecurityMainActivity: int k> = 3;
+        $r0.<com.trustgo.mobile.security.SecurityMainActivity: int l> = 4;
+        $r0.<com.trustgo.mobile.security.SecurityMainActivity: int m> = 5;
+        $r0.<com.trustgo.mobile.security.SecurityMainActivity: int n> = 6;
+        $r0.<com.trustgo.mobile.security.SecurityMainActivity: int o> = 7;
+        $r0.<com.trustgo.mobile.security.SecurityMainActivity: boolean w> = 1;
+        $r1 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>(0);
+        $r0.<com.trustgo.mobile.security.SecurityMainActivity: java.lang.Boolean y> = $r1;
+        $r0.<com.trustgo.mobile.security.SecurityMainActivity: boolean z> = 0;
+        $r2 = new com.trustgo.mobile.security.m;
+        specialinvoke $r2.<com.trustgo.mobile.security.m: void <init>(com.trustgo.mobile.security.SecurityMainActivity)>($r0);
+        $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.content.SharedPreferences$OnSharedPreferenceChangeListener B> = $r2;
+        $r3 = new com.trustgo.mobile.security.w;
+        specialinvoke $r3.<com.trustgo.mobile.security.w: void <init>(com.trustgo.mobile.security.SecurityMainActivity)>($r0);
+        $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.content.DialogInterface$OnClickListener C> = $r3;
+        $r4 = new com.trustgo.mobile.security.b;
+        specialinvoke $r4.<com.trustgo.mobile.security.b: void <init>(com.trustgo.mobile.security.SecurityMainActivity)>($r0);
+        $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.content.DialogInterface$OnClickListener D> = $r4;
+        $r5 = new com.trustgo.mobile.security.a;
+        specialinvoke $r5.<com.trustgo.mobile.security.a: void <init>(com.trustgo.mobile.security.SecurityMainActivity)>($r0);
+        $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.content.DialogInterface$OnCancelListener E> = $r5;
+        return;
+    }
+
+    static android.widget.TextView a(com.trustgo.mobile.security.SecurityMainActivity)
+    {
+        com.trustgo.mobile.security.SecurityMainActivity $r0;
+        android.widget.TextView $r1;
+
+        $r0 := @parameter0: com.trustgo.mobile.security.SecurityMainActivity;
+        $r1 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.widget.TextView q>;
+        return $r1;
+    }
+
+    public static java.lang.String a(long)
+    {
+        long $l0;
+        java.util.Date $r0;
+        java.text.SimpleDateFormat $r1;
+        java.lang.String $r2;
+
+        $l0 := @parameter0: long;
+        $r0 = new java.util.Date;
+        specialinvoke $r0.<java.util.Date: void <init>(long)>($l0);
+        $r1 = new java.text.SimpleDateFormat;
+        specialinvoke $r1.<java.text.SimpleDateFormat: void <init>(java.lang.String)>("MM/dd/yyyy");
+        $r2 = virtualinvoke $r1.<java.text.SimpleDateFormat: java.lang.String format(java.util.Date)>($r0);
+        return $r2;
+    }
+
+    static android.widget.TextView b(com.trustgo.mobile.security.SecurityMainActivity)
+    {
+        com.trustgo.mobile.security.SecurityMainActivity $r0;
+        android.widget.TextView $r1;
+
+        $r0 := @parameter0: com.trustgo.mobile.security.SecurityMainActivity;
+        $r1 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.widget.TextView s>;
+        return $r1;
+    }
+
+    static com.trustgo.a.c c(com.trustgo.mobile.security.SecurityMainActivity)
+    {
+        com.trustgo.mobile.security.SecurityMainActivity $r0;
+        com.trustgo.a.c $r1;
+
+        $r0 := @parameter0: com.trustgo.mobile.security.SecurityMainActivity;
+        $r1 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.a.c A>;
+        return $r1;
+    }
+
+    static com.trustgo.common.q d(com.trustgo.mobile.security.SecurityMainActivity)
+    {
+        com.trustgo.mobile.security.SecurityMainActivity $r0;
+        com.trustgo.common.q $r1;
+
+        $r0 := @parameter0: com.trustgo.mobile.security.SecurityMainActivity;
+        $r1 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.common.q u>;
+        return $r1;
+    }
+
+    static android.os.Handler e(com.trustgo.mobile.security.SecurityMainActivity)
+    {
+        com.trustgo.mobile.security.SecurityMainActivity $r0;
+        android.os.Handler $r1;
+
+        $r0 := @parameter0: com.trustgo.mobile.security.SecurityMainActivity;
+        $r1 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.os.Handler j>;
+        return $r1;
+    }
+
+    static java.lang.Boolean f(com.trustgo.mobile.security.SecurityMainActivity)
+    {
+        com.trustgo.mobile.security.SecurityMainActivity $r0;
+        java.lang.Boolean $r1;
+
+        $r0 := @parameter0: com.trustgo.mobile.security.SecurityMainActivity;
+        $r1 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: java.lang.Boolean y>;
+        return $r1;
+    }
+
+    static com.trustgo.common.f g(com.trustgo.mobile.security.SecurityMainActivity)
+    {
+        com.trustgo.mobile.security.SecurityMainActivity $r0;
+        com.trustgo.common.f $r1;
+
+        $r0 := @parameter0: com.trustgo.mobile.security.SecurityMainActivity;
+        $r1 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.common.f v>;
+        return $r1;
+    }
+
+    static void h(com.trustgo.mobile.security.SecurityMainActivity)
+    {
+        com.trustgo.mobile.security.SecurityMainActivity $r0;
+        java.lang.Boolean $r2;
+        com.trustgo.mobile.security.v $r3;
+
+        $r0 := @parameter0: com.trustgo.mobile.security.SecurityMainActivity;
+        staticinvoke <com.trustgo.common.k: void a(java.lang.String)>("SecurityMainActivity--UpdateSoftware--CancelConnectNetwork");
+        $r2 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>(1);
+        $r0.<com.trustgo.mobile.security.SecurityMainActivity: java.lang.Boolean y> = $r2;
+        $r3 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.mobile.security.v x>;
+        if $r3 == null goto label0;
+
+        $r3 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.mobile.security.v x>;
+        virtualinvoke $r3.<com.trustgo.mobile.security.v: void a()>();
+
+     label0:
+        return;
+    }
+
+    static void i(com.trustgo.mobile.security.SecurityMainActivity)
+    {
+        com.trustgo.mobile.security.SecurityMainActivity $r0;
+        android.content.Intent $r1, $r4;
+        java.lang.String $r2;
+        android.content.Intent$ShortcutIconResource $r6;
+
+        $r0 := @parameter0: com.trustgo.mobile.security.SecurityMainActivity;
+        $r1 = new android.content.Intent;
+        specialinvoke $r1.<android.content.Intent: void <init>(java.lang.String)>("com.android.launcher.action.INSTALL_SHORTCUT");
+        $r4 = new android.content.Intent;
+        specialinvoke $r4.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/trustgo/mobile/security/SecurityMainActivity");
+        $r2 = virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: java.lang.String getString(int)>(2131361792);
+        virtualinvoke $r1.<android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)>("android.intent.extra.shortcut.NAME", $r2);
+        virtualinvoke $r4.<android.content.Intent: android.content.Intent setAction(java.lang.String)>("android.intent.action.MAIN");
+        virtualinvoke $r4.<android.content.Intent: android.content.Intent addCategory(java.lang.String)>("android.intent.category.LAUNCHER");
+        virtualinvoke $r4.<android.content.Intent: android.content.Intent addFlags(int)>(270532608);
+        virtualinvoke $r1.<android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)>("duplicate", 0);
+        virtualinvoke $r1.<android.content.Intent: android.content.Intent putExtra(java.lang.String,android.os.Parcelable)>("android.intent.extra.shortcut.INTENT", $r4);
+        $r6 = staticinvoke <android.content.Intent$ShortcutIconResource: android.content.Intent$ShortcutIconResource fromContext(android.content.Context,int)>($r0, 2130837653);
+        virtualinvoke $r1.<android.content.Intent: android.content.Intent putExtra(java.lang.String,android.os.Parcelable)>("android.intent.extra.shortcut.ICON_RESOURCE", $r6);
+        virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: void sendBroadcast(android.content.Intent)>($r1);
+        return;
+    }
+
+    static void j(com.trustgo.mobile.security.SecurityMainActivity)
+    {
+        com.trustgo.mobile.security.SecurityMainActivity $r0;
+        java.lang.StringBuilder $r1;
+        java.lang.String $r2;
+        android.net.Uri $r3;
+        android.content.Intent $r4;
+
+        $r0 := @parameter0: com.trustgo.mobile.security.SecurityMainActivity;
+        $r1 = new java.lang.StringBuilder;
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>()>();
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("market://details?id=");
+        $r2 = virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: java.lang.String getPackageName()>();
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r2 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r3 = staticinvoke <android.net.Uri: android.net.Uri parse(java.lang.String)>($r2);
+        $r4 = new android.content.Intent;
+        specialinvoke $r4.<android.content.Intent: void <init>(java.lang.String,android.net.Uri)>("android.intent.action.VIEW", $r3);
+        virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: void startActivity(android.content.Intent)>($r4);
+        return;
+    }
+
+    protected final void a()
+    {
+        com.trustgo.mobile.security.SecurityMainActivity $r0;
+        com.trustgo.common.f $r1;
+        boolean $z0;
+        com.trustgo.mobile.security.v $r2;
+
+        $r0 := @this: com.trustgo.mobile.security.SecurityMainActivity;
+        $r1 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.common.f v>;
+        $z0 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: boolean w>;
+        virtualinvoke $r1.<com.trustgo.common.f: void a(boolean)>($z0);
+        $r2 = new com.trustgo.mobile.security.v;
+        specialinvoke $r2.<com.trustgo.mobile.security.v: void <init>(com.trustgo.mobile.security.SecurityMainActivity)>($r0);
+        virtualinvoke $r2.<com.trustgo.mobile.security.v: android.os.AsyncTask execute(java.lang.Object[])>(null);
+        return;
+    }
+
+    protected final void a(android.os.Message)
+    {
+        com.trustgo.mobile.security.SecurityMainActivity $r0;
+        android.os.Message $r1;
+
+        $r0 := @this: com.trustgo.mobile.security.SecurityMainActivity;
+        $r1 := @parameter0: android.os.Message;
+        return;
+    }
+
+    public final boolean a(java.lang.String)
+    {
+        com.trustgo.mobile.security.SecurityMainActivity $r0;
+        java.lang.String $r1, $r3;
+        java.lang.StringBuilder $r2;
+        com.trustgo.a.i $r4;
+        com.trustgo.c.e $r5;
+
+        $r0 := @this: com.trustgo.mobile.security.SecurityMainActivity;
+        $r1 := @parameter0: java.lang.String;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>()>();
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" md5 = \'");
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'");
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r4 = new com.trustgo.a.i;
+        specialinvoke $r4.<com.trustgo.a.i: void <init>(android.content.Context)>($r0);
+        $r5 = virtualinvoke $r4.<com.trustgo.a.i: com.trustgo.c.e a(java.lang.String,boolean)>($r3, 0);
+        if $r5 == null goto label0;
+
+        return 1;
+
+     label0:
+        return 0;
+    }
+
+    public final void b()
+    {
+        com.trustgo.mobile.security.SecurityMainActivity $r0;
+        java.lang.String $r1, $r2, $r6;
+        android.graphics.drawable.Drawable $r3;
+        boolean $z0;
+        java.lang.CharSequence $r4;
+        android.content.res.Resources $r5;
+        com.trustgo.common.q $r8;
+
+        $r0 := @this: com.trustgo.mobile.security.SecurityMainActivity;
+        $r4 = virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: java.lang.CharSequence getText(int)>(2131361814);
+        $r1 = virtualinvoke $r4.<java.lang.Object: java.lang.String toString()>();
+        $r4 = virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: java.lang.CharSequence getText(int)>(2131361803);
+        $r2 = virtualinvoke $r4.<java.lang.Object: java.lang.String toString()>();
+        $r5 = virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.content.res.Resources getResources()>();
+        $r3 = virtualinvoke $r5.<android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int)>(2130837650);
+        $r4 = virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: java.lang.CharSequence getText(int)>(2131361841);
+        $r6 = virtualinvoke $r4.<java.lang.Object: java.lang.String toString()>();
+        $r8 = staticinvoke <com.trustgo.common.w: com.trustgo.common.q a(android.content.Context,java.lang.String,java.lang.String,java.lang.String,android.content.DialogInterface$OnClickListener,java.lang.String,android.content.DialogInterface$OnClickListener,android.graphics.drawable.Drawable,android.view.View,android.content.DialogInterface$OnCancelListener,boolean)>($r0, $r1, $r6, $r2, null, null, null, $r3, null, null, 1);
+        $z0 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: boolean w>;
+        virtualinvoke $r8.<com.trustgo.common.q: void a(boolean)>($z0);
+        return;
+    }
+
+    public final com.trustgo.common.q c()
+    {
+        com.trustgo.mobile.security.SecurityMainActivity $r0;
+        com.trustgo.a.c $r1;
+        java.lang.String $r2, $r13, $r16;
+        com.trustgo.e.a $r3;
+        android.graphics.drawable.Drawable $r4;
+        android.view.View $r5, $r8;
+        android.view.LayoutInflater $r6;
+        android.content.res.Resources $r7;
+        android.widget.TextView $r9, $r10, $r11, $r12;
+        boolean $z0;
+        java.lang.Long $r14;
+        long $l3;
+        android.content.DialogInterface$OnClickListener $r15, $r17;
+        com.trustgo.common.q $r19;
+        com.trustgo.mobile.security.u $r20;
+
+        $r0 := @this: com.trustgo.mobile.security.SecurityMainActivity;
+        $r1 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.a.c A>;
+        virtualinvoke $r1.<com.trustgo.a.c: void a(java.lang.String,int)>("1623", 3);
+        $r6 = staticinvoke <android.view.LayoutInflater: android.view.LayoutInflater 'from'(android.content.Context)>($r0);
+        $r7 = virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.content.res.Resources getResources()>();
+        $r4 = virtualinvoke $r7.<android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int)>(17301543);
+        $r5 = virtualinvoke $r6.<android.view.LayoutInflater: android.view.View inflate(int,android.view.ViewGroup)>(2130903138, null);
+        $r8 = virtualinvoke $r5.<android.view.View: android.view.View findViewById(int)>(2131493425);
+        $r9 = (android.widget.TextView) $r8;
+        $r8 = virtualinvoke $r5.<android.view.View: android.view.View findViewById(int)>(2131493423);
+        $r10 = (android.widget.TextView) $r8;
+        $r8 = virtualinvoke $r5.<android.view.View: android.view.View findViewById(int)>(2131493427);
+        $r11 = (android.widget.TextView) $r8;
+        $r8 = virtualinvoke $r5.<android.view.View: android.view.View findViewById(int)>(2131493428);
+        $r12 = (android.widget.TextView) $r8;
+        $r3 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.e.a b>;
+        $r2 = virtualinvoke $r3.<com.trustgo.e.a: java.lang.String Q()>();
+        virtualinvoke $r10.<android.widget.TextView: void setText(java.lang.CharSequence)>($r2);
+        $r3 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.e.a b>;
+        $r2 = virtualinvoke $r3.<com.trustgo.e.a: java.lang.String S()>();
+        virtualinvoke $r9.<android.widget.TextView: void setText(java.lang.CharSequence)>($r2);
+        $r3 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.e.a b>;
+        $r2 = virtualinvoke $r3.<com.trustgo.e.a: java.lang.String T()>();
+        $z0 = virtualinvoke $r2.<java.lang.String: boolean equals(java.lang.Object)>("");
+        if $z0 == 0 goto label0;
+
+        $r2 = "0";
+
+     label0:
+        $r14 = staticinvoke <java.lang.Long: java.lang.Long valueOf(java.lang.String)>($r2);
+        $l3 = virtualinvoke $r14.<java.lang.Long: long longValue()>();
+        $r13 = staticinvoke <android.text.format.Formatter: java.lang.String formatFileSize(android.content.Context,long)>($r0, $l3);
+        virtualinvoke $r11.<android.widget.TextView: void setText(java.lang.CharSequence)>($r13);
+        $z0 = staticinvoke <com.trustgo.common.u: boolean c(android.content.Context)>($r0);
+        if $z0 == 0 goto label2;
+
+        $r13 = virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: java.lang.String getString(int)>(2131361825);
+
+     label1:
+        virtualinvoke $r12.<android.widget.TextView: void setText(java.lang.CharSequence)>($r13);
+        $r13 = virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: java.lang.String getString(int)>(2131361814);
+        $r2 = virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: java.lang.String getString(int)>(2131361814);
+        $r15 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.content.DialogInterface$OnClickListener C>;
+        $r16 = virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: java.lang.String getString(int)>(2131361803);
+        $r17 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.content.DialogInterface$OnClickListener D>;
+        $r19 = staticinvoke <com.trustgo.common.w: com.trustgo.common.q a(android.content.Context,java.lang.String,java.lang.String,android.content.DialogInterface$OnClickListener,java.lang.String,android.content.DialogInterface$OnClickListener,android.graphics.drawable.Drawable,android.view.View)>($r0, $r13, $r2, $r15, $r16, $r17, $r4, $r5);
+        $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.common.q u> = $r19;
+        $r19 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.common.q u>;
+        $r20 = new com.trustgo.mobile.security.u;
+        specialinvoke $r20.<com.trustgo.mobile.security.u: void <init>(com.trustgo.mobile.security.SecurityMainActivity)>($r0);
+        virtualinvoke $r19.<com.trustgo.common.q: void a(android.content.DialogInterface$OnCancelListener)>($r20);
+        $r19 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.common.q u>;
+        $z0 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: boolean w>;
+        virtualinvoke $r19.<com.trustgo.common.q: void a(boolean)>($z0);
+        $r19 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.common.q u>;
+        return $r19;
+
+     label2:
+        $r13 = virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: java.lang.String getString(int)>(2131361822);
+        goto label1;
+    }
+
+    protected void onCreate(android.os.Bundle)
+    {
+        com.trustgo.mobile.security.SecurityMainActivity $r0;
+        android.os.Bundle $r1;
+        com.trustgo.e.a $r2;
+        android.content.SharedPreferences$OnSharedPreferenceChangeListener $r3;
+        android.view.View $r4, $r5, $r6, $r14, $r15, $r16;
+        com.trustgo.mobile.security.n $r7;
+        com.trustgo.a.c $r8;
+        android.content.Intent $r9;
+        java.lang.String $r10, $r11;
+        boolean $z2;
+        int $i0;
+        java.lang.StringBuilder $r13;
+        android.widget.TextView $r17;
+        com.trustgo.mobile.security.p $r18;
+        com.trustgo.mobile.security.q $r19;
+        com.trustgo.mobile.security.r $r20;
+        com.trustgo.mobile.security.s $r21;
+        com.trustgo.mobile.security.t $r22;
+        com.trustgo.mobile.security.av $r23;
+
+        $r0 := @this: com.trustgo.mobile.security.SecurityMainActivity;
+        $r1 := @parameter0: android.os.Bundle;
+        $i0 = (int) 1;
+        virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: boolean requestWindowFeature(int)>($i0);
+        specialinvoke $r0.<com.trustgo.mobile.BaseActivity: void onCreate(android.os.Bundle)>($r1);
+        $r2 = new com.trustgo.e.a;
+        specialinvoke $r2.<com.trustgo.e.a: void <init>(android.content.Context)>($r0);
+        $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.e.a b> = $r2;
+        $r8 = staticinvoke <com.trustgo.a.c: com.trustgo.a.c a(android.content.Context)>($r0);
+        $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.a.c A> = $r8;
+        $r2 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.e.a b>;
+        $r3 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.content.SharedPreferences$OnSharedPreferenceChangeListener B>;
+        virtualinvoke $r2.<com.trustgo.e.a: void a(android.content.SharedPreferences$OnSharedPreferenceChangeListener)>($r3);
+        $r9 = virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.content.Intent getIntent()>();
+        $r10 = virtualinvoke $r9.<android.content.Intent: java.lang.String getAction()>();
+        if $r10 == null goto label0;
+
+        $z2 = virtualinvoke $r10.<java.lang.String: boolean equals(java.lang.Object)>("intent.trustgo.startsearch");
+        if $z2 == 0 goto label0;
+
+        $r0.<com.trustgo.mobile.security.SecurityMainActivity: boolean z> = 1;
+
+     label0:
+        $r2 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.e.a b>;
+        $z2 = virtualinvoke $r2.<com.trustgo.e.a: boolean aJ()>();
+        if $z2 != 0 goto label2;
+
+        $r9 = new android.content.Intent;
+        specialinvoke $r9.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/trustgo/mobile/security/BetaProgramActivity");
+        virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: void startActivity(android.content.Intent)>($r9);
+        virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: void finish()>();
+
+     label1:
+        return;
+
+     label2:
+        $r2 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.e.a b>;
+        $z2 = virtualinvoke $r2.<com.trustgo.e.a: boolean l()>();
+        if $z2 != 0 goto label3;
+
+        $r9 = new android.content.Intent;
+        specialinvoke $r9.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/trustgo/mobile/PrivacyPolicy");
+        virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: void startActivity(android.content.Intent)>($r9);
+        virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: void finish()>();
+        goto label1;
+
+     label3:
+        $r2 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.e.a b>;
+        $i0 = virtualinvoke $r2.<com.trustgo.e.a: int m()>();
+        if $i0 < 0 goto label4;
+
+        $z2 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: boolean z>;
+        if $z2 != 0 goto label4;
+
+        $r13 = new java.lang.StringBuilder;
+        specialinvoke $r13.<java.lang.StringBuilder: void <init>()>();
+        $r13 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("SecurityMainActivity getUserCancelNewGuidePos:");
+        $r2 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.e.a b>;
+        $i0 = virtualinvoke $r2.<com.trustgo.e.a: int m()>();
+        $r13 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+        $r11 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <com.trustgo.common.k: void a(java.lang.String)>($r11);
+        $r9 = new android.content.Intent;
+        specialinvoke $r9.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/trustgo/mobile/search/HelpFaqDetailsActivity");
+        $r2 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.e.a b>;
+        $i0 = virtualinvoke $r2.<com.trustgo.e.a: int m()>();
+        $r9 = virtualinvoke $r9.<android.content.Intent: android.content.Intent putExtra(java.lang.String,int)>("current_pos", $i0);
+        virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: void startActivity(android.content.Intent)>($r9);
+        virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: void finish()>();
+        goto label1;
+
+     label4:
+        virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: void setContentView(int)>(2130903123);
+        $r2 = new com.trustgo.e.a;
+        specialinvoke $r2.<com.trustgo.e.a: void <init>(android.content.Context)>($r0);
+        $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.e.a b> = $r2;
+        $r14 = virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.view.View findViewById(int)>(2131493316);
+        $r15 = virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.view.View findViewById(int)>(2131493322);
+        $r4 = virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.view.View findViewById(int)>(2131493325);
+        $r5 = virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.view.View findViewById(int)>(2131493328);
+        $r6 = virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.view.View findViewById(int)>(2131493320);
+        $r16 = virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.view.View findViewById(int)>(2131493324);
+        $r17 = (android.widget.TextView) $r16;
+        $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.widget.TextView p> = $r17;
+        $r16 = virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.view.View findViewById(int)>(2131493330);
+        $r17 = (android.widget.TextView) $r16;
+        $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.widget.TextView q> = $r17;
+        $r16 = virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.view.View findViewById(int)>(2131493319);
+        $r17 = (android.widget.TextView) $r16;
+        $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.widget.TextView r> = $r17;
+        $r16 = virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.view.View findViewById(int)>(2131493327);
+        $r17 = (android.widget.TextView) $r16;
+        $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.widget.TextView s> = $r17;
+        $r16 = virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.view.View findViewById(int)>(2131493315);
+        $r7 = new com.trustgo.mobile.security.n;
+        specialinvoke $r7.<com.trustgo.mobile.security.n: void <init>(com.trustgo.mobile.security.SecurityMainActivity)>($r0);
+        virtualinvoke $r16.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r7);
+        $r18 = new com.trustgo.mobile.security.p;
+        specialinvoke $r18.<com.trustgo.mobile.security.p: void <init>(com.trustgo.mobile.security.SecurityMainActivity)>($r0);
+        virtualinvoke $r14.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r18);
+        $r19 = new com.trustgo.mobile.security.q;
+        specialinvoke $r19.<com.trustgo.mobile.security.q: void <init>(com.trustgo.mobile.security.SecurityMainActivity)>($r0);
+        virtualinvoke $r6.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r19);
+        $r20 = new com.trustgo.mobile.security.r;
+        specialinvoke $r20.<com.trustgo.mobile.security.r: void <init>(com.trustgo.mobile.security.SecurityMainActivity)>($r0);
+        virtualinvoke $r15.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r20);
+        $r21 = new com.trustgo.mobile.security.s;
+        specialinvoke $r21.<com.trustgo.mobile.security.s: void <init>(com.trustgo.mobile.security.SecurityMainActivity)>($r0);
+        virtualinvoke $r4.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r21);
+        $r22 = new com.trustgo.mobile.security.t;
+        specialinvoke $r22.<com.trustgo.mobile.security.t: void <init>(com.trustgo.mobile.security.SecurityMainActivity)>($r0);
+        virtualinvoke $r5.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r22);
+        $r2 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.e.a b>;
+        $z2 = virtualinvoke $r2.<com.trustgo.e.a: boolean az()>();
+        if $z2 == 0 goto label5;
+
+        $r2 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.e.a b>;
+        $z2 = virtualinvoke $r2.<com.trustgo.e.a: boolean n()>();
+        if $z2 == 0 goto label5;
+
+        virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.common.q c()>();
+
+     label5:
+        $r2 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.e.a b>;
+        $r11 = virtualinvoke $r2.<com.trustgo.e.a: java.lang.String p()>();
+        $z2 = staticinvoke <android.text.TextUtils: boolean isEmpty(java.lang.CharSequence)>($r11);
+        if $z2 != 0 goto label6;
+
+        $r9 = new android.content.Intent;
+        specialinvoke $r9.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/trustgo/service/ControlService");
+        virtualinvoke $r9.<android.content.Intent: android.content.Intent setAction(java.lang.String)>("com.trustgo.START");
+        virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.content.ComponentName startService(android.content.Intent)>($r9);
+
+     label6:
+        $r8 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.a.c A>;
+        $i0 = (int) 1;
+        virtualinvoke $r8.<com.trustgo.a.c: void a(java.lang.String,int)>("201", $i0);
+        $z2 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: boolean z>;
+        if $z2 == 0 goto label7;
+
+        virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: void startSearch(java.lang.String,boolean,android.os.Bundle,boolean)>(null, 0, null, 0);
+        $r8 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.a.c A>;
+        $i0 = (int) 1;
+        virtualinvoke $r8.<com.trustgo.a.c: void a(java.lang.String,int)>("1703", $i0);
+
+     label7:
+        $r9 = virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.content.Intent getIntent()>();
+        $r11 = <com.trustgo.mobile.security.SecurityMainActivity: java.lang.String a>;
+        $i0 = (int) 0;
+        $i0 = virtualinvoke $r9.<android.content.Intent: int getIntExtra(java.lang.String,int)>($r11, $i0);
+        lookupswitch($i0)
+        {
+            case 1: goto label10;
+            case 2: goto label11;
+            default: goto label8;
+        };
+
+     label8:
+        $r8 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.a.c A>;
+        $i0 = (int) 1;
+        virtualinvoke $r8.<com.trustgo.a.c: void a(java.lang.String,int)>("202", $i0);
+
+     label9:
+        $r2 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.e.a b>;
+        $z2 = virtualinvoke $r2.<com.trustgo.e.a: boolean at()>();
+        if $z2 == 0 goto label1;
+
+        $r2 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.e.a b>;
+        $z2 = virtualinvoke $r2.<com.trustgo.e.a: boolean l()>();
+        if $z2 == 0 goto label1;
+
+        $r23 = new com.trustgo.mobile.security.av;
+        specialinvoke $r23.<com.trustgo.mobile.security.av: void <init>(com.trustgo.mobile.security.SecurityMainActivity)>($r0);
+        virtualinvoke $r23.<com.trustgo.mobile.security.av: void start()>();
+        goto label1;
+
+     label10:
+        $r8 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.a.c A>;
+        $i0 = (int) 1;
+        virtualinvoke $r8.<com.trustgo.a.c: void a(java.lang.String,int)>("203", $i0);
+        goto label9;
+
+     label11:
+        $r8 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.a.c A>;
+        $i0 = (int) 1;
+        virtualinvoke $r8.<com.trustgo.a.c: void a(java.lang.String,int)>("204", $i0);
+        goto label9;
+    }
+
+    public boolean onCreateOptionsMenu(android.view.Menu)
+    {
+        com.trustgo.mobile.security.SecurityMainActivity $r0;
+        android.view.Menu $r1;
+        boolean $z0;
+
+        $r0 := @this: com.trustgo.mobile.security.SecurityMainActivity;
+        $r1 := @parameter0: android.view.Menu;
+        $z0 = specialinvoke $r0.<com.trustgo.mobile.BaseActivity: boolean onCreateOptionsMenu(android.view.Menu)>($r1);
+        return $z0;
+    }
+
+    protected void onDestroy()
+    {
+        com.trustgo.mobile.security.SecurityMainActivity $r0;
+        com.trustgo.e.a $r1;
+        android.content.SharedPreferences$OnSharedPreferenceChangeListener $r2;
+        com.trustgo.common.f $r3;
+
+        $r0 := @this: com.trustgo.mobile.security.SecurityMainActivity;
+        $r1 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.e.a b>;
+        if $r1 == null goto label0;
+
+        $r1 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.e.a b>;
+        $r2 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.content.SharedPreferences$OnSharedPreferenceChangeListener B>;
+        virtualinvoke $r1.<com.trustgo.e.a: void b(android.content.SharedPreferences$OnSharedPreferenceChangeListener)>($r2);
+
+     label0:
+        $r0.<com.trustgo.mobile.security.SecurityMainActivity: boolean w> = 0;
+        $r3 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.common.f v>;
+        if $r3 == null goto label1;
+
+        $r3 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.common.f v>;
+        virtualinvoke $r3.<com.trustgo.common.f: void dismiss()>();
+
+     label1:
+        specialinvoke $r0.<com.trustgo.mobile.BaseActivity: void onDestroy()>();
+        return;
+    }
+
+    public boolean onKeyDown(int, android.view.KeyEvent)
+    {
+        com.trustgo.mobile.security.SecurityMainActivity $r0;
+        int $i0, $i2;
+        android.view.KeyEvent $r1;
+        java.lang.String $r2, $r4, $r11, $r12;
+        com.trustgo.mobile.security.d $r3;
+        com.trustgo.mobile.security.c $r5;
+        boolean $z0;
+        com.trustgo.e.a $r6;
+        android.app.AlertDialog$Builder $r7;
+        com.trustgo.mobile.security.at $r8;
+        com.trustgo.mobile.security.as $r9;
+        com.trustgo.mobile.security.ar $r10;
+        com.trustgo.common.q $r14;
+        com.trustgo.mobile.security.au $r15;
+
+        $r0 := @this: com.trustgo.mobile.security.SecurityMainActivity;
+        $i0 := @parameter0: int;
+        $r1 := @parameter1: android.view.KeyEvent;
+        if $i0 != 4 goto label3;
+
+        $z0 = staticinvoke <com.trustgo.common.u: boolean d(android.content.Context,java.lang.String)>($r0, "com.android.vending");
+        if $z0 == 0 goto label1;
+
+        $r6 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.e.a b>;
+        $i2 = virtualinvoke $r6.<com.trustgo.e.a: int aL()>();
+        if $i2 < 4 goto label2;
+
+        $r6 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.e.a b>;
+        $i2 = virtualinvoke $r6.<com.trustgo.e.a: int aK()>();
+        if $i2 == 0 goto label0;
+
+        $r6 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.e.a b>;
+        $i2 = virtualinvoke $r6.<com.trustgo.e.a: int aK()>();
+        if $i2 != 2 goto label2;
+
+     label0:
+        $r7 = new android.app.AlertDialog$Builder;
+        specialinvoke $r7.<android.app.AlertDialog$Builder: void <init>(android.content.Context)>($r0);
+        $r4 = virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: java.lang.String getString(int)>(2131362120);
+        $r2 = virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: java.lang.String getString(int)>(2131362121);
+        virtualinvoke $r7.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setTitle(java.lang.CharSequence)>($r4);
+        virtualinvoke $r7.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setMessage(java.lang.CharSequence)>($r2);
+        $r8 = new com.trustgo.mobile.security.at;
+        specialinvoke $r8.<com.trustgo.mobile.security.at: void <init>(com.trustgo.mobile.security.SecurityMainActivity)>($r0);
+        virtualinvoke $r7.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setNegativeButton(int,android.content.DialogInterface$OnClickListener)>(2131362124, $r8);
+        $r9 = new com.trustgo.mobile.security.as;
+        specialinvoke $r9.<com.trustgo.mobile.security.as: void <init>(com.trustgo.mobile.security.SecurityMainActivity)>($r0);
+        virtualinvoke $r7.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setNeutralButton(int,android.content.DialogInterface$OnClickListener)>(2131362123, $r9);
+        $r10 = new com.trustgo.mobile.security.ar;
+        specialinvoke $r10.<com.trustgo.mobile.security.ar: void <init>(com.trustgo.mobile.security.SecurityMainActivity)>($r0);
+        virtualinvoke $r7.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setPositiveButton(int,android.content.DialogInterface$OnClickListener)>(2131362122, $r10);
+        virtualinvoke $r7.<android.app.AlertDialog$Builder: android.app.AlertDialog create()>();
+        virtualinvoke $r7.<android.app.AlertDialog$Builder: android.app.AlertDialog show()>();
+
+     label1:
+        $r6 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.e.a b>;
+        $z0 = virtualinvoke $r6.<com.trustgo.e.a: boolean b()>();
+        if $z0 == 0 goto label3;
+
+        $r4 = virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: java.lang.String getString(int)>(2131361792);
+        $z0 = staticinvoke <com.trustgo.common.u: boolean f(android.content.Context,java.lang.String)>($r0, $r4);
+        if $z0 != 0 goto label3;
+
+        $r11 = virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: java.lang.String getString(int)>(2131361855);
+        $r12 = virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: java.lang.String getString(int)>(2131361854);
+        $r2 = virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: java.lang.String getString(int)>(2131361798);
+        $r4 = virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: java.lang.String getString(int)>(2131361802);
+        $r3 = new com.trustgo.mobile.security.d;
+        specialinvoke $r3.<com.trustgo.mobile.security.d: void <init>(com.trustgo.mobile.security.SecurityMainActivity)>($r0);
+        $r5 = new com.trustgo.mobile.security.c;
+        specialinvoke $r5.<com.trustgo.mobile.security.c: void <init>(com.trustgo.mobile.security.SecurityMainActivity)>($r0);
+        $r14 = staticinvoke <com.trustgo.common.w: com.trustgo.common.q a(android.content.Context,java.lang.String,java.lang.String,java.lang.String,android.content.DialogInterface$OnClickListener,java.lang.String,android.content.DialogInterface$OnClickListener)>($r0, $r11, $r12, $r2, $r3, $r4, $r5);
+        $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.common.q t> = $r14;
+        $r14 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.common.q t>;
+        $z0 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: boolean w>;
+        virtualinvoke $r14.<com.trustgo.common.q: void a(boolean)>($z0);
+        $r14 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.common.q t>;
+        $r15 = new com.trustgo.mobile.security.au;
+        specialinvoke $r15.<com.trustgo.mobile.security.au: void <init>(com.trustgo.mobile.security.SecurityMainActivity)>($r0);
+        virtualinvoke $r14.<com.trustgo.common.q: void a(android.content.DialogInterface$OnDismissListener)>($r15);
+        $r6 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.e.a b>;
+        virtualinvoke $r6.<com.trustgo.e.a: void a()>();
+        return 1;
+
+     label2:
+        $r6 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.e.a b>;
+        $i2 = virtualinvoke $r6.<com.trustgo.e.a: int aL()>();
+        $i2 = $i2 + 1;
+        $r6 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.e.a b>;
+        virtualinvoke $r6.<com.trustgo.e.a: void g(int)>($i2);
+        goto label1;
+
+     label3:
+        $z0 = specialinvoke $r0.<com.trustgo.mobile.BaseActivity: boolean onKeyDown(int,android.view.KeyEvent)>($i0, $r1);
+        return $z0;
+    }
+
+    public boolean onOptionsItemSelected(android.view.MenuItem)
+    {
+        com.trustgo.mobile.security.SecurityMainActivity $r0;
+        android.view.MenuItem $r1;
+        com.trustgo.a.c $r2;
+        java.lang.String $r3, $r6;
+        int $i0;
+        boolean $z0;
+        android.content.Intent $r4;
+        android.content.DialogInterface$OnCancelListener $r7;
+        com.trustgo.common.f $r8;
+        com.trustgo.mobile.security.v $r9;
+
+        $r0 := @this: com.trustgo.mobile.security.SecurityMainActivity;
+        $r1 := @parameter0: android.view.MenuItem;
+        $r2 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.a.c A>;
+        virtualinvoke $r2.<com.trustgo.a.c: void a(java.lang.String,int)>("1601", 3);
+        $i0 = interfaceinvoke $r1.<android.view.MenuItem: int getItemId()>();
+        lookupswitch($i0)
+        {
+            case 0: goto label2;
+            case 1: goto label6;
+            case 2: goto label0;
+            case 3: goto label1;
+            case 4: goto label5;
+            case 5: goto label3;
+            case 6: goto label4;
+            case 7: goto label7;
+            default: goto label0;
+        };
+
+     label0:
+        $z0 = specialinvoke $r0.<com.trustgo.mobile.BaseActivity: boolean onOptionsItemSelected(android.view.MenuItem)>($r1);
+        return $z0;
+
+     label1:
+        <com.trustgo.mobile.profile.LoginAccountActivity: int a> = 4;
+        $r4 = new android.content.Intent;
+        specialinvoke $r4.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/trustgo/mobile/profile/LoginAccountActivity");
+        virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: void startActivity(android.content.Intent)>($r4);
+        goto label0;
+
+     label2:
+        $r4 = new android.content.Intent;
+        specialinvoke $r4.<android.content.Intent: void <init>(java.lang.String)>("android.intent.action.SEND");
+        virtualinvoke $r4.<android.content.Intent: android.content.Intent setType(java.lang.String)>("text/plain");
+        $r6 = virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: java.lang.String getString(int)>(2131362322);
+        virtualinvoke $r4.<android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)>("android.intent.extra.SUBJECT", $r6);
+        $r3 = virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: java.lang.String getString(int)>(2131362323);
+        virtualinvoke $r4.<android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)>("android.intent.extra.TEXT", $r3);
+        virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: void startActivity(android.content.Intent)>($r4);
+        $r2 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.a.c A>;
+        virtualinvoke $r2.<com.trustgo.a.c: void a(java.lang.String,int)>("1603", 3);
+        goto label0;
+
+     label3:
+        $r2 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.a.c A>;
+        virtualinvoke $r2.<com.trustgo.a.c: void a(java.lang.String,int)>("1622", 3);
+        $r6 = virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: java.lang.String getString(int)>(2131361833);
+        $r7 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.content.DialogInterface$OnCancelListener E>;
+        $r8 = staticinvoke <com.trustgo.common.w: com.trustgo.common.f a(android.content.Context,java.lang.String,android.content.DialogInterface$OnCancelListener)>($r0, $r6, $r7);
+        $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.common.f v> = $r8;
+        $r8 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.common.f v>;
+        $z0 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: boolean w>;
+        virtualinvoke $r8.<com.trustgo.common.f: void a(boolean)>($z0);
+        $r0.<com.trustgo.mobile.security.SecurityMainActivity: boolean h> = 0;
+        $r9 = new com.trustgo.mobile.security.v;
+        specialinvoke $r9.<com.trustgo.mobile.security.v: void <init>(com.trustgo.mobile.security.SecurityMainActivity)>($r0);
+        $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.mobile.security.v x> = $r9;
+        $r9 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.mobile.security.v x>;
+        virtualinvoke $r9.<com.trustgo.mobile.security.v: android.os.AsyncTask execute(java.lang.Object[])>(null);
+        goto label0;
+
+     label4:
+        $r2 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.a.c A>;
+        virtualinvoke $r2.<com.trustgo.a.c: void a(java.lang.String,int)>("1626", 3);
+        $r4 = new android.content.Intent;
+        specialinvoke $r4.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/trustgo/mobile/AboutActivity");
+        virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: void startActivity(android.content.Intent)>($r4);
+        goto label0;
+
+     label5:
+        $r4 = new android.content.Intent;
+        specialinvoke $r4.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/trustgo/mobile/setting/TrustGoSetting");
+        virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: void startActivity(android.content.Intent)>($r4);
+        goto label0;
+
+     label6:
+        $r2 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.a.c A>;
+        virtualinvoke $r2.<com.trustgo.a.c: void a(java.lang.String,int)>("1604", 3);
+        $r4 = new android.content.Intent;
+        specialinvoke $r4.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/trustgo/mobile/TrustGoFeedBack");
+        virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: void startActivity(android.content.Intent)>($r4);
+        goto label0;
+
+     label7:
+        $r4 = new android.content.Intent;
+        specialinvoke $r4.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "com/trustgo/mobile/profile/UserInfoActivity");
+        virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: void startActivity(android.content.Intent)>($r4);
+        goto label0;
+    }
+
+    public boolean onPrepareOptionsMenu(android.view.Menu)
+    {
+        com.trustgo.mobile.security.SecurityMainActivity $r0;
+        android.view.Menu $r1;
+        android.view.MenuItem $r2;
+        com.trustgo.e.a $r3;
+        boolean $z0;
+
+        $r0 := @this: com.trustgo.mobile.security.SecurityMainActivity;
+        $r1 := @parameter0: android.view.Menu;
+        interfaceinvoke $r1.<android.view.Menu: void clear()>();
+        $r2 = interfaceinvoke $r1.<android.view.Menu: android.view.MenuItem add(int,int,int,int)>(0, 0, 0, 2131362309);
+        interfaceinvoke $r2.<android.view.MenuItem: android.view.MenuItem setIcon(int)>(2130837691);
+        $r2 = interfaceinvoke $r1.<android.view.Menu: android.view.MenuItem add(int,int,int,int)>(0, 1, 1, 2131362315);
+        interfaceinvoke $r2.<android.view.MenuItem: android.view.MenuItem setIcon(int)>(2130837687);
+        $r3 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.e.a b>;
+        $z0 = virtualinvoke $r3.<com.trustgo.e.a: boolean r()>();
+        if $z0 == 0 goto label1;
+
+        $r2 = interfaceinvoke $r1.<android.view.Menu: android.view.MenuItem add(int,int,int,int)>(0, 7, 3, 2131362125);
+        interfaceinvoke $r2.<android.view.MenuItem: android.view.MenuItem setIcon(int)>(2130837688);
+
+     label0:
+        $r2 = interfaceinvoke $r1.<android.view.Menu: android.view.MenuItem add(int,int,int,int)>(0, 4, 4, 2131362314);
+        interfaceinvoke $r2.<android.view.MenuItem: android.view.MenuItem setIcon(int)>(2130837690);
+        $r2 = interfaceinvoke $r1.<android.view.Menu: android.view.MenuItem add(int,int,int,int)>(0, 5, 6, 2131362311);
+        interfaceinvoke $r2.<android.view.MenuItem: android.view.MenuItem setIcon(int)>(2130837692);
+        $r2 = interfaceinvoke $r1.<android.view.Menu: android.view.MenuItem findItem(int)>(5);
+        $z0 = <com.trustgo.service.TrustgoService: boolean j>;
+        interfaceinvoke $r2.<android.view.MenuItem: android.view.MenuItem setEnabled(boolean)>($z0);
+        $r2 = interfaceinvoke $r1.<android.view.Menu: android.view.MenuItem add(int,int,int,int)>(0, 6, 7, 2131362313);
+        interfaceinvoke $r2.<android.view.MenuItem: android.view.MenuItem setIcon(int)>(2130837683);
+        $z0 = specialinvoke $r0.<com.trustgo.mobile.BaseActivity: boolean onPrepareOptionsMenu(android.view.Menu)>($r1);
+        return $z0;
+
+     label1:
+        $r2 = interfaceinvoke $r1.<android.view.Menu: android.view.MenuItem add(int,int,int,int)>(0, 3, 3, 2131362320);
+        interfaceinvoke $r2.<android.view.MenuItem: android.view.MenuItem setIcon(int)>(2130837688);
+        goto label0;
+    }
+
+    protected void onResume()
+    {
+        com.trustgo.mobile.security.SecurityMainActivity $r0;
+        com.trustgo.e.a $r1;
+        java.lang.String $r2, $r5;
+        java.util.Date $r3;
+        int $i0, $i1, $i3, $i5;
+        byte $b2;
+        boolean $z0;
+        android.widget.TextView $r4;
+        long $l6;
+        java.lang.StringBuilder $r6;
+
+        $r0 := @this: com.trustgo.mobile.security.SecurityMainActivity;
+        specialinvoke $r0.<com.trustgo.mobile.BaseActivity: void onResume()>();
+        $r1 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.e.a b>;
+        $z0 = virtualinvoke $r1.<com.trustgo.e.a: boolean A()>();
+        if $z0 == 0 goto label4;
+
+        $r4 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.widget.TextView q>;
+        virtualinvoke $r4.<android.widget.TextView: void setText(java.lang.CharSequence)>("");
+
+     label0:
+        $r1 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.e.a b>;
+        $z0 = virtualinvoke $r1.<com.trustgo.e.a: boolean y()>();
+        if $z0 == 0 goto label6;
+
+        $r1 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.e.a b>;
+        $l6 = virtualinvoke $r1.<com.trustgo.e.a: long z()>();
+        $r3 = new java.util.Date;
+        specialinvoke $r3.<java.util.Date: void <init>(long)>($l6);
+        $i0 = virtualinvoke $r3.<java.util.Date: int getHours()>();
+        $i1 = $i0 - 12;
+        if $i1 <= 0 goto label5;
+
+        $i1 = $i0 - 12;
+        $r5 = "pm";
+
+     label1:
+        $r4 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.widget.TextView s>;
+        $i0 = staticinvoke <android.graphics.Color: int parseColor(java.lang.String)>("#abafb5");
+        virtualinvoke $r4.<android.widget.TextView: void setTextColor(int)>($i0);
+        $r4 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.widget.TextView s>;
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>()>();
+        $r2 = virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: java.lang.String getString(int)>(2131362108);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i1);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(":");
+        $i3 = virtualinvoke $r3.<java.util.Date: int getMinutes()>();
+        $r2 = staticinvoke <java.lang.String: java.lang.String valueOf(int)>($i3);
+        $r2 = staticinvoke <com.trustgo.common.m: java.lang.String a(java.lang.String)>($r2);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
+        $r5 = staticinvoke <com.trustgo.mobile.security.SecurityMainActivity: java.lang.String a(long)>($l6);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+        $r5 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r4.<android.widget.TextView: void setText(java.lang.CharSequence)>($r5);
+
+     label2:
+        $r1 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.e.a b>;
+        $z0 = virtualinvoke $r1.<com.trustgo.e.a: boolean x()>();
+        if $z0 != 0 goto label7;
+
+        $r4 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.widget.TextView r>;
+        $i5 = staticinvoke <android.graphics.Color: int parseColor(java.lang.String)>("#e0ad23");
+        virtualinvoke $r4.<android.widget.TextView: void setTextColor(int)>($i5);
+        $r4 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.widget.TextView r>;
+        virtualinvoke $r4.<android.widget.TextView: void setText(int)>(2131362207);
+
+     label3:
+        return;
+
+     label4:
+        $r4 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.widget.TextView q>;
+        $i1 = staticinvoke <android.graphics.Color: int parseColor(java.lang.String)>("#e0ad23");
+        virtualinvoke $r4.<android.widget.TextView: void setTextColor(int)>($i1);
+        $r4 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.widget.TextView q>;
+        virtualinvoke $r4.<android.widget.TextView: void setText(int)>(2131361986);
+        goto label0;
+
+     label5:
+        $i1 = $i0;
+        $r5 = "am";
+        goto label1;
+
+     label6:
+        $r4 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.widget.TextView s>;
+        $i1 = staticinvoke <android.graphics.Color: int parseColor(java.lang.String)>("#e0ad23");
+        virtualinvoke $r4.<android.widget.TextView: void setTextColor(int)>($i1);
+        $r4 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.widget.TextView s>;
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>()>();
+        $r5 = virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: java.lang.String getString(int)>(2131362108);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+        $r5 = virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: java.lang.String getString(int)>(2131362109);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+        $r5 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r4.<android.widget.TextView: void setText(java.lang.CharSequence)>($r5);
+        goto label2;
+
+     label7:
+        $r1 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: com.trustgo.e.a b>;
+        $l6 = virtualinvoke $r1.<com.trustgo.e.a: long V()>();
+        $b2 = $l6 cmp 0L;
+        if $b2 != 0 goto label8;
+
+        $r4 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.widget.TextView r>;
+        $i3 = staticinvoke <android.graphics.Color: int parseColor(java.lang.String)>("#e0ad23");
+        virtualinvoke $r4.<android.widget.TextView: void setTextColor(int)>($i3);
+        $r4 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.widget.TextView r>;
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>()>();
+        $r5 = virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: java.lang.String getString(int)>(2131362107);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+        $r5 = virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: java.lang.String getString(int)>(2131362109);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+        $r5 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r4.<android.widget.TextView: void setText(java.lang.CharSequence)>($r5);
+        goto label3;
+
+     label8:
+        $r4 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.widget.TextView r>;
+        $i5 = staticinvoke <android.graphics.Color: int parseColor(java.lang.String)>("#abafb5");
+        virtualinvoke $r4.<android.widget.TextView: void setTextColor(int)>($i5);
+        $r4 = $r0.<com.trustgo.mobile.security.SecurityMainActivity: android.widget.TextView r>;
+        $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>()>();
+        $r5 = virtualinvoke $r0.<com.trustgo.mobile.security.SecurityMainActivity: java.lang.String getString(int)>(2131362107);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+        $r5 = staticinvoke <com.trustgo.mobile.security.SecurityMainActivity: java.lang.String a(long)>($l6);
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+        $r5 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r4.<android.widget.TextView: void setText(java.lang.CharSequence)>($r5);
+        goto label3;
+    }
+}
