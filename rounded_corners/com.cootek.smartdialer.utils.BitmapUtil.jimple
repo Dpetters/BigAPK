@@ -1,0 +1,282 @@
+public class com.cootek.smartdialer.utils.BitmapUtil extends java.lang.Object
+{
+
+    public void <init>()
+    {
+        com.cootek.smartdialer.utils.BitmapUtil $r0;
+
+        $r0 := @this: com.cootek.smartdialer.utils.BitmapUtil;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public static byte[] bitmap2byteArray(android.graphics.Bitmap)
+    {
+        android.graphics.Bitmap $r0;
+        int $i0, $i3, $i4;
+        android.graphics.Matrix $r1;
+        java.io.ByteArrayOutputStream $r2;
+        java.io.IOException $r3;
+        short $s5, $s6;
+        float $f0, $f1, $f2;
+        android.graphics.Bitmap$CompressFormat $r4;
+        byte[] $r5;
+
+        $r0 := @parameter0: android.graphics.Bitmap;
+        if $r0 != null goto label0;
+
+        return null;
+
+     label0:
+        $i3 = virtualinvoke $r0.<android.graphics.Bitmap: int getWidth()>();
+        $i4 = virtualinvoke $r0.<android.graphics.Bitmap: int getHeight()>();
+        $s6 = 70;
+        $s5 = 70;
+        $i0 = staticinvoke <com.cootek.smartdialer.utils.NetworkUtil: int getType()>();
+        if $i0 != 3 goto label1;
+
+        $s6 = 160;
+        $s5 = 160;
+
+     label1:
+        $f1 = (float) $s6;
+        $f0 = (float) $i3;
+        $f1 = $f1 / $f0;
+        $f0 = (float) $s5;
+        $f2 = (float) $i4;
+        $f0 = $f0 / $f2;
+        $r1 = new android.graphics.Matrix;
+        specialinvoke $r1.<android.graphics.Matrix: void <init>()>();
+        virtualinvoke $r1.<android.graphics.Matrix: boolean postScale(float,float)>($f1, $f0);
+        $r0 = staticinvoke <android.graphics.Bitmap: android.graphics.Bitmap createBitmap(android.graphics.Bitmap,int,int,int,int,android.graphics.Matrix,boolean)>($r0, 0, 0, $i3, $i4, $r1, 1);
+        $r2 = new java.io.ByteArrayOutputStream;
+        specialinvoke $r2.<java.io.ByteArrayOutputStream: void <init>()>();
+        $r4 = <android.graphics.Bitmap$CompressFormat: android.graphics.Bitmap$CompressFormat PNG>;
+        virtualinvoke $r0.<android.graphics.Bitmap: boolean compress(android.graphics.Bitmap$CompressFormat,int,java.io.OutputStream)>($r4, 100, $r2);
+        $r5 = virtualinvoke $r2.<java.io.ByteArrayOutputStream: byte[] toByteArray()>();
+
+     label2:
+        virtualinvoke $r2.<java.io.ByteArrayOutputStream: void close()>();
+
+     label3:
+        return $r5;
+
+     label4:
+        $r3 := @caughtexception;
+        staticinvoke <com.cootek.smartdialer.utils.debug.TLog: void printStackTrace(java.lang.Exception)>($r3);
+        return null;
+
+        catch java.io.IOException from label2 to label3 with label4;
+    }
+
+    public static android.graphics.Bitmap crop(android.graphics.Bitmap)
+    {
+        android.graphics.Bitmap $r0;
+        int $i0, $i1;
+
+        $r0 := @parameter0: android.graphics.Bitmap;
+        if $r0 != null goto label0;
+
+        return null;
+
+     label0:
+        $i1 = virtualinvoke $r0.<android.graphics.Bitmap: int getWidth()>();
+        $i0 = virtualinvoke $r0.<android.graphics.Bitmap: int getHeight()>();
+        $i0 = staticinvoke <java.lang.Math: int min(int,int)>($i1, $i0);
+        $r0 = staticinvoke <android.graphics.Bitmap: android.graphics.Bitmap createBitmap(android.graphics.Bitmap,int,int,int,int)>($r0, 0, 0, $i0, $i0);
+        return $r0;
+    }
+
+    public static android.graphics.Bitmap fromByteArray(byte[])
+    {
+        byte[] $r0;
+        int $i0;
+        android.graphics.Bitmap $r1;
+
+        $r0 := @parameter0: byte[];
+        if $r0 == null goto label0;
+
+        $i0 = lengthof $r0;
+        if $i0 != 0 goto label1;
+
+     label0:
+        return null;
+
+     label1:
+        $i0 = lengthof $r0;
+        $r1 = staticinvoke <android.graphics.BitmapFactory: android.graphics.Bitmap decodeByteArray(byte[],int,int)>($r0, 0, $i0);
+        return $r1;
+    }
+
+    public static android.graphics.Bitmap getBitmapFromFile(java.lang.String)
+    {
+        java.lang.String $r0;
+        boolean $z0;
+        android.graphics.Bitmap $r1;
+
+        $r0 := @parameter0: java.lang.String;
+        $z0 = staticinvoke <android.text.TextUtils: boolean isEmpty(java.lang.CharSequence)>($r0);
+        if $z0 == 0 goto label0;
+
+        return null;
+
+     label0:
+        $r1 = staticinvoke <android.graphics.BitmapFactory: android.graphics.Bitmap decodeFile(java.lang.String)>($r0);
+        return $r1;
+    }
+
+    public static android.graphics.Bitmap getRoundedCornerBitmap(android.graphics.Bitmap)
+    {
+        android.graphics.Bitmap $r0, $r7;
+        android.graphics.Canvas $r1;
+        android.graphics.Paint $r3;
+        android.graphics.Rect $r4;
+        android.graphics.RectF $r5;
+        int $i0, $i1;
+        android.graphics.Bitmap$Config $r6;
+        android.graphics.PorterDuffXfermode $r8;
+        android.graphics.PorterDuff$Mode $r9;
+
+        $r0 := @parameter0: android.graphics.Bitmap;
+        $i0 = virtualinvoke $r0.<android.graphics.Bitmap: int getWidth()>();
+        $i1 = virtualinvoke $r0.<android.graphics.Bitmap: int getHeight()>();
+        $r6 = <android.graphics.Bitmap$Config: android.graphics.Bitmap$Config ARGB_8888>;
+        $r7 = staticinvoke <android.graphics.Bitmap: android.graphics.Bitmap createBitmap(int,int,android.graphics.Bitmap$Config)>($i0, $i1, $r6);
+        $r1 = new android.graphics.Canvas;
+        specialinvoke $r1.<android.graphics.Canvas: void <init>(android.graphics.Bitmap)>($r7);
+        $r3 = new android.graphics.Paint;
+        specialinvoke $r3.<android.graphics.Paint: void <init>()>();
+        $r4 = new android.graphics.Rect;
+        $i1 = virtualinvoke $r0.<android.graphics.Bitmap: int getWidth()>();
+        $i0 = virtualinvoke $r0.<android.graphics.Bitmap: int getHeight()>();
+        specialinvoke $r4.<android.graphics.Rect: void <init>(int,int,int,int)>(0, 0, $i1, $i0);
+        $r5 = new android.graphics.RectF;
+        specialinvoke $r5.<android.graphics.RectF: void <init>(android.graphics.Rect)>($r4);
+        virtualinvoke $r3.<android.graphics.Paint: void setAntiAlias(boolean)>(1);
+        virtualinvoke $r1.<android.graphics.Canvas: void drawARGB(int,int,int,int)>(0, 0, 0, 0);
+        virtualinvoke $r3.<android.graphics.Paint: void setColor(int)>(-65536);
+        virtualinvoke $r1.<android.graphics.Canvas: void drawRoundRect(android.graphics.RectF,float,float,android.graphics.Paint)>($r5, 10.0F, 10.0F, $r3);
+        $r8 = new android.graphics.PorterDuffXfermode;
+        $r9 = <android.graphics.PorterDuff$Mode: android.graphics.PorterDuff$Mode SRC_IN>;
+        specialinvoke $r8.<android.graphics.PorterDuffXfermode: void <init>(android.graphics.PorterDuff$Mode)>($r9);
+        virtualinvoke $r3.<android.graphics.Paint: android.graphics.Xfermode setXfermode(android.graphics.Xfermode)>($r8);
+        virtualinvoke $r1.<android.graphics.Canvas: void drawBitmap(android.graphics.Bitmap,android.graphics.Rect,android.graphics.Rect,android.graphics.Paint)>($r0, $r4, $r4, $r3);
+        return $r7;
+    }
+
+    public static android.graphics.Bitmap makeNumBitmap(android.content.Context, int, int)
+    {
+        android.content.Context $r0;
+        int $i0, $i1;
+        android.graphics.Bitmap $r1;
+        android.content.res.Resources $r2;
+
+        $r0 := @parameter0: android.content.Context;
+        $i0 := @parameter1: int;
+        $i1 := @parameter2: int;
+        $r2 = virtualinvoke $r0.<android.content.Context: android.content.res.Resources getResources()>();
+        $r1 = staticinvoke <android.graphics.BitmapFactory: android.graphics.Bitmap decodeResource(android.content.res.Resources,int)>($r2, $i0);
+        $r1 = staticinvoke <com.cootek.smartdialer.utils.BitmapUtil: android.graphics.Bitmap makeNumBitmap(android.content.Context,android.graphics.Bitmap,int)>($r0, $r1, $i1);
+        return $r1;
+    }
+
+    public static android.graphics.Bitmap makeNumBitmap(android.content.Context, android.graphics.Bitmap, int)
+    {
+        android.content.Context $r0;
+        android.graphics.Bitmap $r1, $r8;
+        int $i0, $i1, $i2;
+        android.graphics.Canvas $r2;
+        android.graphics.Paint $r3;
+        android.graphics.Rect $r4, $r6;
+        android.graphics.Bitmap$Config $r7;
+        float $f0;
+        android.graphics.Typeface $r9;
+        java.lang.String $r10;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: android.graphics.Bitmap;
+        $i0 := @parameter2: int;
+        $i1 = virtualinvoke $r1.<android.graphics.Bitmap: int getWidth()>();
+        $i2 = virtualinvoke $r1.<android.graphics.Bitmap: int getHeight()>();
+        $r7 = <android.graphics.Bitmap$Config: android.graphics.Bitmap$Config ARGB_8888>;
+        $r8 = staticinvoke <android.graphics.Bitmap: android.graphics.Bitmap createBitmap(int,int,android.graphics.Bitmap$Config)>($i1, $i2, $r7);
+        $r2 = new android.graphics.Canvas;
+        specialinvoke $r2.<android.graphics.Canvas: void <init>(android.graphics.Bitmap)>($r8);
+        $r3 = new android.graphics.Paint;
+        specialinvoke $r3.<android.graphics.Paint: void <init>()>();
+        $r6 = new android.graphics.Rect;
+        $i2 = virtualinvoke $r1.<android.graphics.Bitmap: int getWidth()>();
+        $i1 = virtualinvoke $r1.<android.graphics.Bitmap: int getHeight()>();
+        specialinvoke $r6.<android.graphics.Rect: void <init>(int,int,int,int)>(0, 0, $i2, $i1);
+        $r4 = new android.graphics.Rect;
+        $i2 = virtualinvoke $r1.<android.graphics.Bitmap: int getWidth()>();
+        $i1 = virtualinvoke $r1.<android.graphics.Bitmap: int getHeight()>();
+        specialinvoke $r4.<android.graphics.Rect: void <init>(int,int,int,int)>(0, 0, $i2, $i1);
+        virtualinvoke $r2.<android.graphics.Canvas: void drawBitmap(android.graphics.Bitmap,android.graphics.Rect,android.graphics.Rect,android.graphics.Paint)>($r1, $r6, $r4, $r3);
+        $r3 = new android.graphics.Paint;
+        specialinvoke $r3.<android.graphics.Paint: void <init>(int)>(257);
+        virtualinvoke $r3.<android.graphics.Paint: void setColor(int)>(-1);
+        virtualinvoke $r3.<android.graphics.Paint: void setTextSize(float)>(20.0F);
+        $r9 = <android.graphics.Typeface: android.graphics.Typeface DEFAULT_BOLD>;
+        virtualinvoke $r3.<android.graphics.Paint: android.graphics.Typeface setTypeface(android.graphics.Typeface)>($r9);
+        $r10 = staticinvoke <java.lang.String: java.lang.String valueOf(int)>($i0);
+        $i2 = virtualinvoke $r1.<android.graphics.Bitmap: int getWidth()>();
+        $i2 = $i2 + -18;
+        $f0 = (float) $i2;
+        virtualinvoke $r2.<android.graphics.Canvas: void drawText(java.lang.String,float,float,android.graphics.Paint)>($r10, $f0, 25.0F, $r3);
+        return $r8;
+    }
+
+    public static byte[] resizeBitmap(byte[], int, int)
+    {
+        byte[] $r0;
+        int $i0, $i1, $i3, $i4;
+        android.graphics.Bitmap $r1;
+        android.graphics.Matrix $r2;
+        java.io.ByteArrayOutputStream $r3;
+        java.io.IOException $r4;
+        float $f0, $f1, $f2;
+        android.graphics.Bitmap$CompressFormat $r5;
+
+        $r0 := @parameter0: byte[];
+        $i0 := @parameter1: int;
+        $i1 := @parameter2: int;
+        if $r0 != null goto label0;
+
+        return null;
+
+     label0:
+        $i3 = lengthof $r0;
+        $r1 = staticinvoke <android.graphics.BitmapFactory: android.graphics.Bitmap decodeByteArray(byte[],int,int)>($r0, 0, $i3);
+        $i3 = virtualinvoke $r1.<android.graphics.Bitmap: int getWidth()>();
+        $i4 = virtualinvoke $r1.<android.graphics.Bitmap: int getHeight()>();
+        $f1 = (float) $i0;
+        $f0 = (float) $i3;
+        $f1 = $f1 / $f0;
+        $f0 = (float) $i1;
+        $f2 = (float) $i4;
+        $f0 = $f0 / $f2;
+        $r2 = new android.graphics.Matrix;
+        specialinvoke $r2.<android.graphics.Matrix: void <init>()>();
+        virtualinvoke $r2.<android.graphics.Matrix: boolean postScale(float,float)>($f1, $f0);
+        $r1 = staticinvoke <android.graphics.Bitmap: android.graphics.Bitmap createBitmap(android.graphics.Bitmap,int,int,int,int,android.graphics.Matrix,boolean)>($r1, 0, 0, $i3, $i4, $r2, 1);
+        $r3 = new java.io.ByteArrayOutputStream;
+        specialinvoke $r3.<java.io.ByteArrayOutputStream: void <init>()>();
+        $r5 = <android.graphics.Bitmap$CompressFormat: android.graphics.Bitmap$CompressFormat PNG>;
+        virtualinvoke $r1.<android.graphics.Bitmap: boolean compress(android.graphics.Bitmap$CompressFormat,int,java.io.OutputStream)>($r5, 100, $r3);
+        $r0 = virtualinvoke $r3.<java.io.ByteArrayOutputStream: byte[] toByteArray()>();
+
+     label1:
+        virtualinvoke $r3.<java.io.ByteArrayOutputStream: void close()>();
+
+     label2:
+        return $r0;
+
+     label3:
+        $r4 := @caughtexception;
+        staticinvoke <com.cootek.smartdialer.utils.debug.TLog: void printStackTrace(java.lang.Exception)>($r4);
+        return null;
+
+        catch java.io.IOException from label1 to label2 with label3;
+    }
+}

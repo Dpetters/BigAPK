@@ -1,0 +1,609 @@
+public class com.mysms.android.sms.util.ImageUtil extends java.lang.Object
+{
+    private static com.mysms.android.sms.util.ExifInfo exifInfo;
+
+    public void <init>()
+    {
+        com.mysms.android.sms.util.ImageUtil $r0;
+
+        $r0 := @this: com.mysms.android.sms.util.ImageUtil;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public static android.graphics.Bitmap createAvatar(android.content.Context, android.graphics.Bitmap)
+    {
+        android.content.Context $r0;
+        android.graphics.Bitmap $r1;
+        int $i0, $i1;
+        float $f0, $f1;
+        android.content.res.Resources $r2;
+        android.util.DisplayMetrics $r3;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: android.graphics.Bitmap;
+        if $r1 != null goto label0;
+
+        return null;
+
+     label0:
+        $i0 = virtualinvoke $r1.<android.graphics.Bitmap: int getWidth()>();
+        $i1 = virtualinvoke $r1.<android.graphics.Bitmap: int getHeight()>();
+        if $i0 == $i1 goto label1;
+
+        $r1 = staticinvoke <com.mysms.android.sms.util.ImageUtil: android.graphics.Bitmap cropBitmap(android.graphics.Bitmap)>($r1);
+
+     label1:
+        $r2 = virtualinvoke $r0.<android.content.Context: android.content.res.Resources getResources()>();
+        $r3 = virtualinvoke $r2.<android.content.res.Resources: android.util.DisplayMetrics getDisplayMetrics()>();
+        $f0 = $r3.<android.util.DisplayMetrics: float density>;
+        $f1 = 44.0F * $f0;
+        $i1 = (int) $f1;
+        $f1 = 6.0F * $f0;
+        $i0 = (int) $f1;
+        $r1 = staticinvoke <android.graphics.Bitmap: android.graphics.Bitmap createScaledBitmap(android.graphics.Bitmap,int,int,boolean)>($r1, $i1, $i1, 1);
+        $r1 = staticinvoke <com.mysms.android.sms.util.ImageUtil: android.graphics.Bitmap getRoundedCornerBitmap(android.graphics.Bitmap,int)>($r1, $i0);
+        return $r1;
+    }
+
+    public static android.graphics.Bitmap createMmsThumbnail(android.content.Context, android.graphics.Bitmap)
+    {
+        android.content.Context $r0;
+        android.graphics.Bitmap $r1, $r10, $r12;
+        android.util.DisplayMetrics $r2;
+        int $i0, $i2, $i3;
+        android.graphics.Canvas $r3;
+        android.graphics.Rect $r4, $r6;
+        android.graphics.RectF $r5, $r7;
+        android.graphics.Paint $r8;
+        float $f0, $f1, $f2, $f3;
+        android.content.res.Resources $r9;
+        android.graphics.Bitmap$Config $r11;
+        android.graphics.PorterDuffXfermode $r13;
+        android.graphics.PorterDuff$Mode $r14;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: android.graphics.Bitmap;
+        $r9 = virtualinvoke $r0.<android.content.Context: android.content.res.Resources getResources()>();
+        $r2 = virtualinvoke $r9.<android.content.res.Resources: android.util.DisplayMetrics getDisplayMetrics()>();
+        $f0 = $r2.<android.util.DisplayMetrics: float density>;
+        $f1 = 90.0F * $f0;
+        $i3 = (int) $f1;
+        $i2 = virtualinvoke $r1.<android.graphics.Bitmap: int getWidth()>();
+        $f2 = (float) $i2;
+        $f1 = (float) $i3;
+        $i2 = virtualinvoke $r1.<android.graphics.Bitmap: int getHeight()>();
+        $f3 = (float) $i2;
+        $f3 = $f1 / $f3;
+        $f3 = $f2 * $f3;
+        $i0 = (int) $f3;
+        $f3 = 6.0F * $f0;
+        $i2 = (int) $f3;
+        $f0 = (float) $i2;
+        $r1 = staticinvoke <android.graphics.Bitmap: android.graphics.Bitmap createScaledBitmap(android.graphics.Bitmap,int,int,boolean)>($r1, $i0, $i3, 1);
+        $r10 = staticinvoke <com.mysms.android.sms.util.ImageUtil: android.graphics.Bitmap getRoundedCornerBitmap(android.graphics.Bitmap,int)>($r1, $i2);
+        $i3 = virtualinvoke $r10.<android.graphics.Bitmap: int getWidth()>();
+        $i3 = $i3 + 2;
+        $i2 = virtualinvoke $r10.<android.graphics.Bitmap: int getHeight()>();
+        $i2 = $i2 + 2;
+        $r11 = <android.graphics.Bitmap$Config: android.graphics.Bitmap$Config ARGB_8888>;
+        $r12 = staticinvoke <android.graphics.Bitmap: android.graphics.Bitmap createBitmap(int,int,android.graphics.Bitmap$Config)>($i3, $i2, $r11);
+        $r1 = $r12;
+        $r8 = new android.graphics.Paint;
+        specialinvoke $r8.<android.graphics.Paint: void <init>()>();
+        $r3 = new android.graphics.Canvas;
+        specialinvoke $r3.<android.graphics.Canvas: void <init>(android.graphics.Bitmap)>($r1);
+        virtualinvoke $r8.<android.graphics.Paint: void setAntiAlias(boolean)>(1);
+        $r6 = new android.graphics.Rect;
+        $i2 = virtualinvoke $r1.<android.graphics.Bitmap: int getWidth()>();
+        $i0 = virtualinvoke $r1.<android.graphics.Bitmap: int getHeight()>();
+        specialinvoke $r6.<android.graphics.Rect: void <init>(int,int,int,int)>(0, 0, $i2, $i0);
+        $r4 = new android.graphics.Rect;
+        $i3 = virtualinvoke $r1.<android.graphics.Bitmap: int getWidth()>();
+        $i2 = virtualinvoke $r1.<android.graphics.Bitmap: int getHeight()>();
+        $i3 = $i3 - 1;
+        $i2 = $i2 - 1;
+        specialinvoke $r4.<android.graphics.Rect: void <init>(int,int,int,int)>(1, 1, $i3, $i2);
+        $r7 = new android.graphics.RectF;
+        specialinvoke $r7.<android.graphics.RectF: void <init>(android.graphics.Rect)>($r6);
+        $r5 = new android.graphics.RectF;
+        specialinvoke $r5.<android.graphics.RectF: void <init>(android.graphics.Rect)>($r4);
+        virtualinvoke $r8.<android.graphics.Paint: void setColor(int)>(-4276546);
+        virtualinvoke $r3.<android.graphics.Canvas: void drawRoundRect(android.graphics.RectF,float,float,android.graphics.Paint)>($r7, $f0, $f0, $r8);
+        virtualinvoke $r8.<android.graphics.Paint: void setColor(int)>(0);
+        $r13 = new android.graphics.PorterDuffXfermode;
+        $r14 = <android.graphics.PorterDuff$Mode: android.graphics.PorterDuff$Mode CLEAR>;
+        specialinvoke $r13.<android.graphics.PorterDuffXfermode: void <init>(android.graphics.PorterDuff$Mode)>($r14);
+        virtualinvoke $r8.<android.graphics.Paint: android.graphics.Xfermode setXfermode(android.graphics.Xfermode)>($r13);
+        virtualinvoke $r3.<android.graphics.Canvas: void drawRoundRect(android.graphics.RectF,float,float,android.graphics.Paint)>($r5, $f0, $f0, $r8);
+        virtualinvoke $r8.<android.graphics.Paint: void setColor(int)>(-4276546);
+        virtualinvoke $r8.<android.graphics.Paint: android.graphics.Xfermode setXfermode(android.graphics.Xfermode)>(null);
+        virtualinvoke $r3.<android.graphics.Canvas: void drawBitmap(android.graphics.Bitmap,android.graphics.Rect,android.graphics.RectF,android.graphics.Paint)>($r10, null, $r5, $r8);
+        virtualinvoke $r10.<android.graphics.Bitmap: void recycle()>();
+        return $r12;
+    }
+
+    public static android.graphics.Bitmap createMmsThumbnail(android.content.Context, android.net.Uri)
+    {
+        android.content.Context $r0;
+        android.net.Uri $r1;
+        android.graphics.Bitmap $r2, $r9;
+        float $f0, $f1, $f2;
+        java.lang.Exception $r3;
+        int $i0, $i1, $i2;
+        android.graphics.BitmapFactory$Options $r4;
+        android.content.res.Resources $r5;
+        android.util.DisplayMetrics $r6;
+        android.content.ContentResolver $r7;
+        java.io.InputStream $r8;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: android.net.Uri;
+        $r5 = virtualinvoke $r0.<android.content.Context: android.content.res.Resources getResources()>();
+        $r6 = virtualinvoke $r5.<android.content.res.Resources: android.util.DisplayMetrics getDisplayMetrics()>();
+        $f0 = $r6.<android.util.DisplayMetrics: float density>;
+        $r4 = new android.graphics.BitmapFactory$Options;
+
+     label0:
+        specialinvoke $r4.<android.graphics.BitmapFactory$Options: void <init>()>();
+        $r4.<android.graphics.BitmapFactory$Options: boolean inJustDecodeBounds> = 1;
+        $r7 = virtualinvoke $r0.<android.content.Context: android.content.ContentResolver getContentResolver()>();
+        $r8 = virtualinvoke $r7.<android.content.ContentResolver: java.io.InputStream openInputStream(android.net.Uri)>($r1);
+        staticinvoke <android.graphics.BitmapFactory: android.graphics.Bitmap decodeStream(java.io.InputStream,android.graphics.Rect,android.graphics.BitmapFactory$Options)>($r8, null, $r4);
+        $i2 = $r4.<android.graphics.BitmapFactory$Options: int outHeight>;
+        $i1 = $r4.<android.graphics.BitmapFactory$Options: int outWidth>;
+        $i1 = staticinvoke <java.lang.Math: int min(int,int)>($i2, $i1);
+        $f1 = 90.0F * $f0;
+        $i0 = (int) $f1;
+        $i2 = $r4.<android.graphics.BitmapFactory$Options: int outWidth>;
+        $f1 = (float) $i2;
+        $f0 = (float) $i0;
+        $i2 = $r4.<android.graphics.BitmapFactory$Options: int outHeight>;
+        $f2 = (float) $i2;
+        $f2 = $f0 / $f2;
+        $f2 = $f1 * $f2;
+        $i2 = (int) $f2;
+        $i0 = staticinvoke <java.lang.Math: int max(int,int)>($i0, $i2);
+        $i1 = $i1 / $i0;
+        $i0 = 1;
+
+     label1:
+        if $i0 >= $i1 goto label2;
+
+        $i0 = $i0 * 2;
+        goto label1;
+
+     label2:
+        if $i0 <= 1 goto label3;
+
+        $i0 = $i0 / 2;
+
+     label3:
+        $r4 = new android.graphics.BitmapFactory$Options;
+        specialinvoke $r4.<android.graphics.BitmapFactory$Options: void <init>()>();
+        $r4.<android.graphics.BitmapFactory$Options: int inSampleSize> = $i0;
+        $r7 = virtualinvoke $r0.<android.content.Context: android.content.ContentResolver getContentResolver()>();
+        $r8 = virtualinvoke $r7.<android.content.ContentResolver: java.io.InputStream openInputStream(android.net.Uri)>($r1);
+        $r2 = staticinvoke <android.graphics.BitmapFactory: android.graphics.Bitmap decodeStream(java.io.InputStream,android.graphics.Rect,android.graphics.BitmapFactory$Options)>($r8, null, $r4);
+        $r9 = staticinvoke <com.mysms.android.sms.util.ImageUtil: android.graphics.Bitmap createMmsThumbnail(android.content.Context,android.graphics.Bitmap)>($r0, $r2);
+        virtualinvoke $r2.<android.graphics.Bitmap: void recycle()>();
+
+     label4:
+        return $r9;
+
+     label5:
+        $r3 := @caughtexception;
+        staticinvoke <com.mysms.android.sms.App: void error(java.lang.String,java.lang.Exception)>("failed to create thumbnail", $r3);
+        return null;
+
+        catch java.lang.Exception from label0 to label4 with label5;
+    }
+
+    public static android.graphics.Bitmap createScaledImage(android.content.Context, android.net.Uri, int)
+    {
+        android.content.Context $r0;
+        android.net.Uri $r1;
+        int $i0;
+        float $f0, $f1;
+        android.content.res.Resources $r2;
+        android.util.DisplayMetrics $r3;
+        android.graphics.Bitmap $r4;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: android.net.Uri;
+        $i0 := @parameter2: int;
+        $r2 = virtualinvoke $r0.<android.content.Context: android.content.res.Resources getResources()>();
+        $r3 = virtualinvoke $r2.<android.content.res.Resources: android.util.DisplayMetrics getDisplayMetrics()>();
+        $f0 = $r3.<android.util.DisplayMetrics: float density>;
+        $f1 = (float) $i0;
+        $f1 = $f1 * $f0;
+        $i0 = (int) $f1;
+        $r4 = staticinvoke <com.mysms.android.sms.util.ImageUtil: android.graphics.Bitmap shrinkImage(android.content.Context,android.net.Uri,int,boolean)>($r0, $r1, $i0, 1);
+        return $r4;
+    }
+
+    private static android.graphics.Bitmap cropBitmap(android.graphics.Bitmap)
+    {
+        android.graphics.Bitmap $r0;
+        int $i0, $i1, $i2;
+
+        $r0 := @parameter0: android.graphics.Bitmap;
+        $i0 = virtualinvoke $r0.<android.graphics.Bitmap: int getHeight()>();
+        $i2 = virtualinvoke $r0.<android.graphics.Bitmap: int getWidth()>();
+        $i1 = $i0 - $i2;
+        $i1 = staticinvoke <java.lang.Math: int abs(int)>($i1);
+        $i1 = $i1 / 2;
+        if $i0 <= $i2 goto label0;
+
+        $r0 = staticinvoke <android.graphics.Bitmap: android.graphics.Bitmap createBitmap(android.graphics.Bitmap,int,int,int,int)>($r0, 0, $i1, $i2, $i2);
+        return $r0;
+
+     label0:
+        $r0 = staticinvoke <android.graphics.Bitmap: android.graphics.Bitmap createBitmap(android.graphics.Bitmap,int,int,int,int)>($r0, $i1, 0, $i0, $i0);
+        return $r0;
+    }
+
+    public static int getImageOrientation(android.content.Context, android.net.Uri)
+    {
+        android.content.Context $r0;
+        android.net.Uri $r1;
+        java.lang.String $r2, $r3;
+        java.lang.String[] $r4;
+        android.database.Cursor $r5;
+        int $i0;
+        boolean $z0;
+        android.content.ContentResolver $r6;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: android.net.Uri;
+        $i0 = 0;
+        $r2 = virtualinvoke $r1.<android.net.Uri: java.lang.String getScheme()>();
+        $z0 = virtualinvoke $r2.<java.lang.String: boolean equals(java.lang.Object)>("file");
+        if $z0 == 0 goto label1;
+
+        $r3 = virtualinvoke $r1.<android.net.Uri: java.lang.String getPath()>();
+        $i0 = staticinvoke <com.mysms.android.sms.util.ImageUtil: int getImageOrientation(java.lang.String)>($r3);
+
+     label0:
+        return $i0;
+
+     label1:
+        $r3 = virtualinvoke $r1.<android.net.Uri: java.lang.String getScheme()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>("content");
+        if $z0 == 0 goto label0;
+
+        $r4 = newarray (java.lang.String)[2];
+        $r4[0] = "_data";
+        $r4[1] = "orientation";
+        $r6 = virtualinvoke $r0.<android.content.Context: android.content.ContentResolver getContentResolver()>();
+        $r5 = virtualinvoke $r6.<android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)>($r1, $r4, null, null, null);
+        if $r5 == null goto label0;
+
+        $z0 = interfaceinvoke $r5.<android.database.Cursor: boolean moveToFirst()>();
+        if $z0 == 0 goto label0;
+
+        $r3 = $r4[0];
+        $i0 = interfaceinvoke $r5.<android.database.Cursor: int getColumnIndexOrThrow(java.lang.String)>($r3);
+        $r3 = interfaceinvoke $r5.<android.database.Cursor: java.lang.String getString(int)>($i0);
+        $r2 = $r4[1];
+        $i0 = interfaceinvoke $r5.<android.database.Cursor: int getColumnIndexOrThrow(java.lang.String)>($r2);
+        $i0 = interfaceinvoke $r5.<android.database.Cursor: int getInt(int)>($i0);
+        interfaceinvoke $r5.<android.database.Cursor: void close()>();
+        if $i0 != 0 goto label0;
+
+        if $r3 == null goto label0;
+
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean startsWith(java.lang.String)>("/");
+        if $z0 == 0 goto label0;
+
+        $i0 = staticinvoke <com.mysms.android.sms.util.ImageUtil: int getImageOrientation(java.lang.String)>($r3);
+        return $i0;
+    }
+
+    public static int getImageOrientation(java.lang.String)
+    {
+        java.lang.String $r0, $r5;
+        java.lang.Exception $r1;
+        java.lang.Class $r2;
+        boolean $z0;
+        com.mysms.android.sms.util.ExifInfo $r3;
+        java.lang.StringBuilder $r4;
+        java.lang.Object $r7;
+        int $i0;
+
+        $r0 := @parameter0: java.lang.String;
+        $z0 = staticinvoke <com.mysms.android.sms.util.SystemUtil: boolean supportsExifInterface()>();
+        if $z0 == 0 goto label4;
+
+        $r3 = <com.mysms.android.sms.util.ImageUtil: com.mysms.android.sms.util.ExifInfo exifInfo>;
+        if $r3 != null goto label1;
+
+        $r4 = new java.lang.StringBuilder;
+
+     label0:
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>()>();
+        $r2 = class "com/mysms/android/sms/util/ExifInfo";
+        $r5 = virtualinvoke $r2.<java.lang.Class: java.lang.String getName()>();
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("5");
+        $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+        $r2 = staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>($r5);
+        $r2 = virtualinvoke $r2.<java.lang.Class: java.lang.Class asSubclass(java.lang.Class)>(class "com/mysms/android/sms/util/ExifInfo");
+        $r7 = virtualinvoke $r2.<java.lang.Class: java.lang.Object newInstance()>();
+        $r3 = (com.mysms.android.sms.util.ExifInfo) $r7;
+        <com.mysms.android.sms.util.ImageUtil: com.mysms.android.sms.util.ExifInfo exifInfo> = $r3;
+
+     label1:
+        $r3 = <com.mysms.android.sms.util.ImageUtil: com.mysms.android.sms.util.ExifInfo exifInfo>;
+        $i0 = interfaceinvoke $r3.<com.mysms.android.sms.util.ExifInfo: int getOrientation(java.lang.String)>($r0);
+
+     label2:
+        return $i0;
+
+     label3:
+        $r1 := @caughtexception;
+        staticinvoke <com.mysms.android.sms.App: void error(java.lang.String,java.lang.Exception)>("failed to load exif information", $r1);
+
+     label4:
+        return 0;
+
+        catch java.lang.Exception from label0 to label2 with label3;
+    }
+
+    public static android.graphics.Bitmap getRoundedCornerBitmap(android.graphics.Bitmap, int)
+    {
+        android.graphics.Bitmap $r0, $r7;
+        int $i0, $i1, $i2;
+        android.graphics.Canvas $r1;
+        android.graphics.Paint $r3;
+        android.graphics.Rect $r4;
+        android.graphics.RectF $r5;
+        float $f0;
+        android.graphics.Bitmap$Config $r6;
+        android.graphics.PorterDuffXfermode $r8;
+        android.graphics.PorterDuff$Mode $r9;
+
+        $r0 := @parameter0: android.graphics.Bitmap;
+        $i0 := @parameter1: int;
+        $i1 = virtualinvoke $r0.<android.graphics.Bitmap: int getWidth()>();
+        $i2 = virtualinvoke $r0.<android.graphics.Bitmap: int getHeight()>();
+        $r6 = <android.graphics.Bitmap$Config: android.graphics.Bitmap$Config ARGB_8888>;
+        $r7 = staticinvoke <android.graphics.Bitmap: android.graphics.Bitmap createBitmap(int,int,android.graphics.Bitmap$Config)>($i1, $i2, $r6);
+        $r1 = new android.graphics.Canvas;
+        specialinvoke $r1.<android.graphics.Canvas: void <init>(android.graphics.Bitmap)>($r7);
+        $r3 = new android.graphics.Paint;
+        specialinvoke $r3.<android.graphics.Paint: void <init>()>();
+        $r4 = new android.graphics.Rect;
+        $i2 = virtualinvoke $r0.<android.graphics.Bitmap: int getWidth()>();
+        $i1 = virtualinvoke $r0.<android.graphics.Bitmap: int getHeight()>();
+        specialinvoke $r4.<android.graphics.Rect: void <init>(int,int,int,int)>(0, 0, $i2, $i1);
+        $r5 = new android.graphics.RectF;
+        specialinvoke $r5.<android.graphics.RectF: void <init>(android.graphics.Rect)>($r4);
+        $f0 = (float) $i0;
+        virtualinvoke $r3.<android.graphics.Paint: void setAntiAlias(boolean)>(1);
+        virtualinvoke $r1.<android.graphics.Canvas: void drawARGB(int,int,int,int)>(0, 0, 0, 0);
+        virtualinvoke $r3.<android.graphics.Paint: void setColor(int)>(-12434878);
+        virtualinvoke $r1.<android.graphics.Canvas: void drawRoundRect(android.graphics.RectF,float,float,android.graphics.Paint)>($r5, $f0, $f0, $r3);
+        $r8 = new android.graphics.PorterDuffXfermode;
+        $r9 = <android.graphics.PorterDuff$Mode: android.graphics.PorterDuff$Mode SRC_IN>;
+        specialinvoke $r8.<android.graphics.PorterDuffXfermode: void <init>(android.graphics.PorterDuff$Mode)>($r9);
+        virtualinvoke $r3.<android.graphics.Paint: android.graphics.Xfermode setXfermode(android.graphics.Xfermode)>($r8);
+        virtualinvoke $r1.<android.graphics.Canvas: void drawBitmap(android.graphics.Bitmap,android.graphics.Rect,android.graphics.Rect,android.graphics.Paint)>($r0, $r4, $r4, $r3);
+        return $r7;
+    }
+
+    public static java.lang.String guessImageType(byte[])
+    {
+        byte[] $r0;
+        byte $b0, $b7;
+        int $i6;
+
+        $r0 := @parameter0: byte[];
+        if $r0 != null goto label0;
+
+        return null;
+
+     label0:
+        $i6 = lengthof $r0;
+        if $i6 < 3 goto label1;
+
+        $b0 = $r0[0];
+        if $b0 != 71 goto label1;
+
+        $b7 = $r0[1];
+        if $b7 != 73 goto label1;
+
+        $b7 = $r0[2];
+        if $b7 != 70 goto label1;
+
+        return "image/gif";
+
+     label1:
+        $i6 = lengthof $r0;
+        if $i6 < 4 goto label2;
+
+        $b7 = $r0[0];
+        if $b7 != -119 goto label2;
+
+        $b7 = $r0[1];
+        if $b7 != 80 goto label2;
+
+        $b7 = $r0[2];
+        if $b7 != 78 goto label2;
+
+        $b7 = $r0[3];
+        if $b7 != 71 goto label2;
+
+        return "image/png";
+
+     label2:
+        $i6 = lengthof $r0;
+        if $i6 < 2 goto label3;
+
+        $b7 = $r0[0];
+        if $b7 != -1 goto label3;
+
+        $b7 = $r0[1];
+        if $b7 != -40 goto label3;
+
+        return "image/jpeg";
+
+     label3:
+        return null;
+    }
+
+    private static java.io.InputStream openStream(android.net.Uri, android.content.Context) throws java.io.IOException
+    {
+        android.net.Uri $r0;
+        android.content.Context $r1;
+        java.lang.String $r2, $r3;
+        boolean $z0;
+        java.net.URL $r4;
+        java.io.InputStream $r5;
+        android.content.ContentResolver $r6;
+
+        $r0 := @parameter0: android.net.Uri;
+        $r1 := @parameter1: android.content.Context;
+        $r2 = "http";
+        $r3 = virtualinvoke $r0.<android.net.Uri: java.lang.String getScheme()>();
+        $z0 = virtualinvoke $r2.<java.lang.String: boolean equals(java.lang.Object)>($r3);
+        if $z0 != 0 goto label0;
+
+        $r3 = "https";
+        $r2 = virtualinvoke $r0.<android.net.Uri: java.lang.String getScheme()>();
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+        if $z0 == 0 goto label1;
+
+     label0:
+        $r4 = new java.net.URL;
+        $r3 = virtualinvoke $r0.<android.net.Uri: java.lang.String toString()>();
+        specialinvoke $r4.<java.net.URL: void <init>(java.lang.String)>($r3);
+        $r5 = virtualinvoke $r4.<java.net.URL: java.io.InputStream openStream()>();
+        return $r5;
+
+     label1:
+        $r6 = virtualinvoke $r1.<android.content.Context: android.content.ContentResolver getContentResolver()>();
+        $r5 = virtualinvoke $r6.<android.content.ContentResolver: java.io.InputStream openInputStream(android.net.Uri)>($r0);
+        return $r5;
+    }
+
+    public static android.graphics.Bitmap rotateImage(android.graphics.Bitmap, int)
+    {
+        android.graphics.Bitmap $r0, $r2;
+        int $i0, $i3;
+        float $f0;
+        android.graphics.Matrix $r1;
+
+        $r0 := @parameter0: android.graphics.Bitmap;
+        $i0 := @parameter1: int;
+        if $i0 == 0 goto label0;
+
+        $r1 = new android.graphics.Matrix;
+        specialinvoke $r1.<android.graphics.Matrix: void <init>()>();
+        $f0 = (float) $i0;
+        virtualinvoke $r1.<android.graphics.Matrix: boolean postRotate(float)>($f0);
+        $i0 = virtualinvoke $r0.<android.graphics.Bitmap: int getWidth()>();
+        $i3 = virtualinvoke $r0.<android.graphics.Bitmap: int getHeight()>();
+        $r2 = staticinvoke <android.graphics.Bitmap: android.graphics.Bitmap createBitmap(android.graphics.Bitmap,int,int,int,int,android.graphics.Matrix,boolean)>($r0, 0, 0, $i0, $i3, $r1, 1);
+        virtualinvoke $r0.<android.graphics.Bitmap: void recycle()>();
+        return $r2;
+
+     label0:
+        return $r0;
+    }
+
+    public static android.graphics.Bitmap shrinkImage(android.content.Context, android.net.Uri, int, boolean)
+    {
+        android.content.Context $r0;
+        android.net.Uri $r1;
+        int $i0, $i1, $i2;
+        boolean $z0;
+        android.graphics.Bitmap $r2, $r6;
+        java.lang.Exception $r3;
+        android.graphics.BitmapFactory$Options $r4;
+        float $f0, $f1, $f2;
+        java.io.InputStream $r5;
+
+        $r0 := @parameter0: android.content.Context;
+        $r1 := @parameter1: android.net.Uri;
+        $i0 := @parameter2: int;
+        $z0 := @parameter3: boolean;
+        $r4 = new android.graphics.BitmapFactory$Options;
+
+     label0:
+        specialinvoke $r4.<android.graphics.BitmapFactory$Options: void <init>()>();
+        $r4.<android.graphics.BitmapFactory$Options: boolean inJustDecodeBounds> = 1;
+        $r5 = staticinvoke <com.mysms.android.sms.util.ImageUtil: java.io.InputStream openStream(android.net.Uri,android.content.Context)>($r1, $r0);
+        staticinvoke <android.graphics.BitmapFactory: android.graphics.Bitmap decodeStream(java.io.InputStream,android.graphics.Rect,android.graphics.BitmapFactory$Options)>($r5, null, $r4);
+        if $z0 != 0 goto label1;
+
+        $i2 = $r4.<android.graphics.BitmapFactory$Options: int outHeight>;
+        $i1 = $r4.<android.graphics.BitmapFactory$Options: int outWidth>;
+        $i2 = staticinvoke <java.lang.Math: int max(int,int)>($i2, $i1);
+        if $i2 >= $i0 goto label1;
+
+        $r5 = staticinvoke <com.mysms.android.sms.util.ImageUtil: java.io.InputStream openStream(android.net.Uri,android.content.Context)>($r1, $r0);
+        $r2 = staticinvoke <android.graphics.BitmapFactory: android.graphics.Bitmap decodeStream(java.io.InputStream)>($r5);
+        return $r2;
+
+     label1:
+        $i2 = $r4.<android.graphics.BitmapFactory$Options: int outHeight>;
+        $i1 = $r4.<android.graphics.BitmapFactory$Options: int outWidth>;
+        $i2 = staticinvoke <java.lang.Math: int max(int,int)>($i2, $i1);
+        $i2 = $i2 / $i0;
+        $i1 = 1;
+
+     label2:
+        if $i1 >= $i2 goto label3;
+
+        $i1 = $i1 * 2;
+        goto label2;
+
+     label3:
+        if $i1 <= $i2 goto label4;
+
+        $i1 = $i1 / 2;
+
+     label4:
+        $r4 = new android.graphics.BitmapFactory$Options;
+        specialinvoke $r4.<android.graphics.BitmapFactory$Options: void <init>()>();
+        $r4.<android.graphics.BitmapFactory$Options: int inSampleSize> = $i1;
+        $r5 = staticinvoke <com.mysms.android.sms.util.ImageUtil: java.io.InputStream openStream(android.net.Uri,android.content.Context)>($r1, $r0);
+        $r2 = staticinvoke <android.graphics.BitmapFactory: android.graphics.Bitmap decodeStream(java.io.InputStream,android.graphics.Rect,android.graphics.BitmapFactory$Options)>($r5, null, $r4);
+        $i1 = virtualinvoke $r2.<android.graphics.Bitmap: int getHeight()>();
+        $i2 = virtualinvoke $r2.<android.graphics.Bitmap: int getWidth()>();
+        if $i1 <= $i2 goto label8;
+
+        $f1 = (float) $i2;
+        $f2 = (float) $i0;
+        $f0 = (float) $i1;
+        $f2 = $f2 / $f0;
+        $f2 = $f1 * $f2;
+        $i2 = (int) $f2;
+        $i1 = $i0;
+
+     label5:
+        $r6 = staticinvoke <android.graphics.Bitmap: android.graphics.Bitmap createScaledBitmap(android.graphics.Bitmap,int,int,boolean)>($r2, $i2, $i1, 1);
+        virtualinvoke $r2.<android.graphics.Bitmap: void recycle()>();
+
+     label6:
+        return $r6;
+
+     label7:
+        $r3 := @caughtexception;
+        staticinvoke <com.mysms.android.sms.App: void error(java.lang.String,java.lang.Exception)>("failed to shrink image", $r3);
+        return null;
+
+     label8:
+        $f2 = (float) $i1;
+        $f1 = (float) $i0;
+        $f0 = (float) $i2;
+        $f1 = $f1 / $f0;
+        $f2 = $f2 * $f1;
+        $i1 = (int) $f2;
+        $i2 = $i0;
+        goto label5;
+
+        catch java.lang.Exception from label0 to label6 with label7;
+    }
+}

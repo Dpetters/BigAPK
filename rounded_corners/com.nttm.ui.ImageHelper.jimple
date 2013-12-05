@@ -1,0 +1,54 @@
+public class com.nttm.ui.ImageHelper extends java.lang.Object
+{
+
+    public void <init>()
+    {
+        com.nttm.ui.ImageHelper $r0;
+
+        $r0 := @this: com.nttm.ui.ImageHelper;
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public static android.graphics.Bitmap getRoundedCornerBitmap(android.graphics.Bitmap, int)
+    {
+        android.graphics.Bitmap $r0, $r7;
+        int $i0, $i1, $i2;
+        android.graphics.Canvas $r1;
+        android.graphics.Paint $r3;
+        android.graphics.Rect $r4;
+        android.graphics.RectF $r5;
+        float $f0;
+        android.graphics.Bitmap$Config $r6;
+        android.graphics.PorterDuffXfermode $r8;
+        android.graphics.PorterDuff$Mode $r9;
+
+        $r0 := @parameter0: android.graphics.Bitmap;
+        $i0 := @parameter1: int;
+        $i1 = virtualinvoke $r0.<android.graphics.Bitmap: int getWidth()>();
+        $i2 = virtualinvoke $r0.<android.graphics.Bitmap: int getHeight()>();
+        $r6 = <android.graphics.Bitmap$Config: android.graphics.Bitmap$Config ARGB_8888>;
+        $r7 = staticinvoke <android.graphics.Bitmap: android.graphics.Bitmap createBitmap(int,int,android.graphics.Bitmap$Config)>($i1, $i2, $r6);
+        $r1 = new android.graphics.Canvas;
+        specialinvoke $r1.<android.graphics.Canvas: void <init>(android.graphics.Bitmap)>($r7);
+        $r3 = new android.graphics.Paint;
+        specialinvoke $r3.<android.graphics.Paint: void <init>()>();
+        $r4 = new android.graphics.Rect;
+        $i2 = virtualinvoke $r0.<android.graphics.Bitmap: int getWidth()>();
+        $i1 = virtualinvoke $r0.<android.graphics.Bitmap: int getHeight()>();
+        specialinvoke $r4.<android.graphics.Rect: void <init>(int,int,int,int)>(0, 0, $i2, $i1);
+        $r5 = new android.graphics.RectF;
+        specialinvoke $r5.<android.graphics.RectF: void <init>(android.graphics.Rect)>($r4);
+        $f0 = (float) $i0;
+        virtualinvoke $r3.<android.graphics.Paint: void setAntiAlias(boolean)>(1);
+        virtualinvoke $r1.<android.graphics.Canvas: void drawARGB(int,int,int,int)>(0, 0, 0, 0);
+        virtualinvoke $r3.<android.graphics.Paint: void setColor(int)>(-12434878);
+        virtualinvoke $r1.<android.graphics.Canvas: void drawRoundRect(android.graphics.RectF,float,float,android.graphics.Paint)>($r5, $f0, $f0, $r3);
+        $r8 = new android.graphics.PorterDuffXfermode;
+        $r9 = <android.graphics.PorterDuff$Mode: android.graphics.PorterDuff$Mode SRC_IN>;
+        specialinvoke $r8.<android.graphics.PorterDuffXfermode: void <init>(android.graphics.PorterDuff$Mode)>($r9);
+        virtualinvoke $r3.<android.graphics.Paint: android.graphics.Xfermode setXfermode(android.graphics.Xfermode)>($r8);
+        virtualinvoke $r1.<android.graphics.Canvas: void drawBitmap(android.graphics.Bitmap,android.graphics.Rect,android.graphics.Rect,android.graphics.Paint)>($r0, $r4, $r4, $r3);
+        return $r7;
+    }
+}
