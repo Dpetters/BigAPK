@@ -71,7 +71,7 @@ public class AndroidInstrument {
         final String appName = appNameTmp;
         final String appPackage = appPackageTmp;
 
-        String dataRoot = "/home/dpetters/Dropbox/Mach-lrn-prj/4";
+        String dataRoot = "data";
         String dataFilePath = dataRoot + "/" + appName + ".data.csv";
         File dataFile = new File(dataFilePath);
         String idFilePath = dataRoot + "/" + appName + ".ids.csv";
@@ -85,7 +85,7 @@ public class AndroidInstrument {
         final List<String> apiCallSigs = new ArrayList<String>();
         BufferedReader br = null;
         try {
-            br = new BufferedReader(new FileReader("data/api-method-signatures"));
+            br = new BufferedReader(new FileReader("api-method-signatures"));
         } catch(FileNotFoundException e) {
             System.out.println("Couldn't find api-method-signatures: " + e.toString());
             System.exit(1);
@@ -103,28 +103,6 @@ public class AndroidInstrument {
             br.close();
         } catch(IOException e) {
             System.out.println("Couldn't close api-method signatures: " + e.toString());
-            System.exit(1);
-        }
-
-        final List<String> adLibPackages = new ArrayList<String>();
-        try {
-            br = new BufferedReader(new FileReader("data/adLibPackages"));
-        } catch(FileNotFoundException e) {
-            System.out.println("Couldn't find api-method-signatures: " + e.toString());
-            System.exit(1);
-        }
-        try {
-            while((line=br.readLine()) != null) {
-                adLibPackages.add(line);
-            }
-        } catch(IOException e) {
-            System.out.println("Couldn't read from adLibPackages: " + e.toString());
-            System.exit(1);
-        }
-        try {
-            br.close();
-        } catch(IOException e) {
-            System.out.println("Couldn't close adLibPackages: " + e.toString());
             System.exit(1);
         }
 
